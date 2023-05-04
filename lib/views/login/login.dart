@@ -1,11 +1,11 @@
 import 'package:adobe/shared/components/button/button.dart';
-import 'package:adobe/views/login_controller.dart';
+import 'package:adobe/views/login/controller/login_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
-import '../res.dart';
+import '../../res.dart';
 
 class LoginPage extends GetWidget<LoginController> {
   const LoginPage({Key? key}) : super(key: key);
