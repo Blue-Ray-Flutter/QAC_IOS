@@ -6,9 +6,12 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 
 import '../../res.dart';
-
+import '../register/register.dart';
+bool  isPressed = false;
 class LoginPage extends GetWidget<LoginController> {
   const LoginPage({Key? key}) : super(key: key);
+
+
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -79,10 +82,10 @@ class LoginPage extends GetWidget<LoginController> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: TextFormField(
-                    decoration: const InputDecoration(
-                      fillColor: Colors.grey,
+                    decoration:  InputDecoration(
+                      fillColor: Colors.grey[300]!.withOpacity(0.4),
                       filled: true,
-                      border: OutlineInputBorder(
+                      border: const OutlineInputBorder(
                           borderRadius:
                               BorderRadius.all(Radius.circular(10.0))),
                     ),
@@ -110,13 +113,24 @@ class LoginPage extends GetWidget<LoginController> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 10),
                   child: TextFormField(
-                    decoration: const InputDecoration(
-                      border: OutlineInputBorder(
+
+                    decoration:  InputDecoration(
+                      // suffix:  IconButton(onPressed: (){
+                      //   isPressed = !isPressed;
+                      // }, icon: const Icon(Icons.remove_red_eye_outlined)),
+                      fillColor: Colors.grey[300]!.withOpacity(0.4),
+
+                      filled: true,
+
+
+                      border: const OutlineInputBorder(
+                        borderSide: BorderSide(color: Colors.green),
+
                           borderRadius:
                               BorderRadius.all(Radius.circular(10.0))),
                     ),
                     controller: controller.passwordController,
-                    obscureText: true,
+                    obscureText: isPressed,
                   ),
                 ),
                 TextButton(
@@ -136,12 +150,19 @@ class LoginPage extends GetWidget<LoginController> {
                     decoration: const BoxDecoration(
                       border: Border.symmetric(),
                     ),
-                    child: Button(onPressed: () {}, text: 'Login')),
+                    child: Button(onPressed: () {
+
+                      controller.logIn();
+
+
+                    }, text: 'Login')),
                 const SizedBox(
                   height: 16,
                 ),
                 Button(
-                  onPressed: () {},
+                  onPressed: () {
+                    Get.to(() => const RegisterPage());
+                  },
                   text: 'Register',
                   textColor: Colors.green,
                   background: Colors.white,
