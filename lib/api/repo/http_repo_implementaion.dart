@@ -1,6 +1,7 @@
 import 'package:adobe/api/api_url/api_url.dart';
 import 'package:adobe/api/repo/http_repo.dart';
 import 'package:adobe/empty.dart';
+import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -29,7 +30,7 @@ final fromData = FormData({
 });
 var response= await post(UrlApi.loginUrl,fromData);
 if(response.isOk){
-  Get.to(()=>const EmptyPage());
+  Get.to(()=> MainPage());
   return response;
 
 
