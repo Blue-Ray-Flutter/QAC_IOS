@@ -18,18 +18,22 @@ class MainPage extends GetWidget<MainPageController>{
             parent: NeverScrollableScrollPhysics(),
 
           ),
+          controller:  controller.pageController,
           children: [
             Container(
-              child: const Center(
-              child: Text('THE TEXT FOR PAGE 1',style: TextStyle(fontSize: 30),
-              ),
-              ),
+              child:
+             CircleAvatar(
+               backgroundColor: Colors.red,
+               radius: 30,
+               child:
+               TextButton(onPressed:(){},
+               child:const Text('Apply',style:TextStyle(color: Colors.white),)),
+             )
             )
           ],
-          controller:  controller.pageController,
         ),
       ),
-          bottomNavigationBar: MyBottomNavigationBar(),
+          // bottomNavigationBar: MyBottomNavigationBar(),
 
 
 

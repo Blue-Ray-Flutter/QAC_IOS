@@ -89,7 +89,8 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
               ),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: TextFormField(
+                child:
+                TextFormField(
                   decoration:  InputDecoration(
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,

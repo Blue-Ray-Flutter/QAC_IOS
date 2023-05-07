@@ -1,5 +1,6 @@
 import 'package:adobe/api/api_url/api_url.dart';
 import 'package:adobe/api/repo/http_repo.dart';
+import 'package:adobe/shared/components/nav_screen/nav_screen.dart';
 import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -29,7 +30,7 @@ final fromData = FormData({
 });
 var response= await post(UrlApi.loginUrl,fromData);
 if(response.isOk){
-  Get.to(()=> MainPage());
+  Get.to(()=> CombinedNavBodyView());
   return response;
 
 

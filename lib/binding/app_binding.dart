@@ -1,4 +1,5 @@
 
+import 'package:adobe/views/contact_us/controller/contact_us_controller.dart';
 import 'package:get/get.dart';
 import 'package:get/get_instance/src/bindings_interface.dart';
 import 'package:get_storage/get_storage.dart';
@@ -35,6 +36,9 @@ class AppBindings extends Bindings {
     Get.create(() => MainPageController(
       // httpRepository: Get.find(),
       // cacheUtils: Get.find(),
+    ));
+    Get.create(() => ContactUsController(
+
     ));
 
   }

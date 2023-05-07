@@ -219,7 +219,7 @@ class LoginPage extends GetWidget<LoginController> {
                       ),
                     ),
                   ),
-                )
+                ),
               ],
             ),
           ),
