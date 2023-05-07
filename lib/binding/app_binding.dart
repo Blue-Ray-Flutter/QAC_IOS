@@ -7,6 +7,7 @@ import '../api/repo/http_repo.dart';
 import '../api/repo/http_repo_implementaion.dart';
 import '../shared/helper/cache_utils.dart';
 import '../views/login/controller/login_controller.dart';
+import '../views/main_page/controller/main_page_controller.dart';
 import '../views/register/controller/register_controller.dart';
 
 class AppBindings extends Bindings {
@@ -31,6 +32,11 @@ class AppBindings extends Bindings {
       // httpRepository: Get.find(),
       // cacheUtils: Get.find(),
     ));
+    Get.create(() => MainPageController(
+      // httpRepository: Get.find(),
+      // cacheUtils: Get.find(),
+    ));
+
   }
 }
 

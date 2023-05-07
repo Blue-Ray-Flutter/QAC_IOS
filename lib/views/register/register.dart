@@ -1,7 +1,10 @@
+import 'package:adobe/shared/components/button/elevated_button.dart';
+import 'package:adobe/shared/components/constants/style/color.dart';
 import 'package:adobe/views/register/controller/register_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:get/get.dart';
@@ -11,8 +14,10 @@ import '../../shared/components/button/button.dart';
 
 class RegisterPage extends GetWidget<RegisterController>{
   const RegisterPage({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
+
   // name controller & password controller & email controller & username controller & phone controller
     return SafeArea(child:
     Scaffold(
@@ -88,7 +93,7 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
                   decoration:  InputDecoration(
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                         borderRadius:
                         BorderRadius.all(Radius.circular(10.0))),
                   ),
@@ -119,7 +124,7 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
                   decoration:  InputDecoration(
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                         borderRadius:
                         BorderRadius.all(Radius.circular(10.0))),
                   ),
@@ -152,7 +157,7 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
                   decoration:  InputDecoration(
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                         borderRadius:
                         BorderRadius.all(Radius.circular(10.0))),
                   ),
@@ -185,7 +190,7 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
                   decoration:  InputDecoration(
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
 
                         borderRadius:
                         BorderRadius.all(Radius.circular(10.0))),
@@ -219,7 +224,7 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
 
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                         borderSide: BorderSide(width: 0.4),
                         borderRadius:
                         BorderRadius.all(Radius.circular(10.0))),
@@ -248,10 +253,13 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 10),
                 child: TextFormField(
+                  inputFormatters: [
+                    FilteringTextInputFormatter.allow(RegExp('[0-9]&&[+]')),
+                  ],
                   decoration:  InputDecoration(
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
-                    border: OutlineInputBorder(
+                    border: const OutlineInputBorder(
                         borderRadius:
                         BorderRadius.all(Radius.circular(10.0))),
                   ),
@@ -264,14 +272,36 @@ padding: const EdgeInsets.only(top: 20,bottom: 40,),
               const SizedBox(
                 height: 20,
               ),
-              Button(
-                onPressed: () {
+          SizedBox(
+            width: double.infinity,
+            height: 60,
+            child: DefaultElevatedButton(
 
-                },
-                text: 'Register',
-                textColor: Colors.white,
-                background: Colors.green,
+
+              onPressed: () {
+                Get.to(() => const RegisterPage());
+              }, shape:RoundedRectangleBorder(
+              side : const BorderSide(color: Colors.green),
+              borderRadius: BorderRadius.circular(15),
+            ),
+
+
+              backgroundColor: AppColor.globalColor ,
+
+
+              child: const Text(
+                'Register',
+                style: TextStyle(
+                  fontSize: 16,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
               ),
+            ),
+          ),
+
+
+
 
 
 

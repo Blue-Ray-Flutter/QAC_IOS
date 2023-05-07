@@ -15,22 +15,34 @@ final CacheUtils cacheUtils;
   LoginController({required this.httpRepository, required this.cacheUtils});
   Rx<LoginModel?> loginModel = Rx<LoginModel?>(null);
   Rx<IconData> ico = Icons.visibility_outlined.obs;
-  RxBool hidePass = true.obs;
+  RxBool obscureText = true.obs;
 
 
-
-
-  hidePassFun(){
-    if(hidePass.value){
-      hidePass.value = false;
-      ico.value = Icons.visibility_off_outlined;
-      return;
-    }else{
-      hidePass.value = true;
-      ico.value = Icons.visibility_outlined;
-      return;
-    }
+  void toggleObscureText() {
+      if(obscureText.value){
+        obscureText.value = false;
+          ico.value = Icons.visibility_off_outlined;
+          return;
+        }else{
+        obscureText.value = true;
+          ico.value = Icons.visibility_outlined;
+          return;
+        }
   }
+
+
+
+  // hidePassFun(){
+  //   //   if(hidePass.value){
+  //   //     hidePass.value = false;
+  //   //     ico.value = Icons.visibility_off_outlined;
+  //   //     return;
+  //   //   }else{
+  //   //     hidePass.value = true;
+  //   //     ico.value = Icons.visibility_outlined;
+  //   //     return;
+  //   //   }
+  //   // }
 
   Future<void>logIn()async{
 

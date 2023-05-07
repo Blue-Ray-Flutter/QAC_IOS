@@ -1,6 +1,5 @@
 import 'package:adobe/api/api_url/api_url.dart';
 import 'package:adobe/api/repo/http_repo.dart';
-import 'package:adobe/empty.dart';
 import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/material.dart';
@@ -44,7 +43,7 @@ response.status.hasError ){
       color: Colors.white,
     ),
     snackPosition: SnackPosition.TOP,
-    backgroundColor: AppColor.globalColor,
+    backgroundColor: AppColor.red,
     borderRadius: 15,
     margin: const EdgeInsets.all(15),
     colorText: Colors.white,
