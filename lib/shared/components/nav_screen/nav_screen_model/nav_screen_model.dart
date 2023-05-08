@@ -6,11 +6,10 @@ import 'package:flutter/material.dart';
 
 import '../../../../views/about_us/more_item.dart';
 
-class BottomNavItemModel{
+class BottomNavItemModel {
   NavBarItem navBarItem;
   IconData icon;
   String name;
-
   Widget widget;
 
   BottomNavItemModel({
