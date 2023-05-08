@@ -3,7 +3,7 @@ import 'package:adobe/shared/components/nav_screen/nav_screen_model/nav_screen_m
 import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../../views/about_us/model/about_us_model.dart';
+import '../../../views/about_us/model/more_item_model.dart';
 import '../button/button.dart';
 import '../card_view_container/card_view.dart';
 
@@ -24,13 +24,15 @@ class _CombinedNavBodyViewState extends State<CombinedNavBodyView> {
 
 
         navScreens[_selectedIndex+3].widget,
-        navScreens[_selectedIndex].navBarItem==NavBarItem.aboutUs?ColoredCardGrid(
-          card: CardViewModel(
-            title: 'About Us',
-            color: Colors.blue,
-            icon: Icon(Icons.add) ,
-          ),
-        ):Container(),
+        // navScreens[_selectedIndex].navBarItem==NavBarItem.aboutUs?
+        // ColoredCardGrid(
+        //   card: Container()
+        //   // CardViewModel(
+        //   //   title: 'About Us',
+        //   //   color: Colors.blue,
+        //   //   icon: Icon(Icons.add) ,
+        //   // ),
+        // ):Container(),
         //
         // DefaultElevatedButton(
         //     child: Icon(Icons.add), onPressed: (){}, shape: const CircleBorder(

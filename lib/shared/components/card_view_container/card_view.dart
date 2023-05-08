@@ -1,65 +1,61 @@
-import 'package:adobe/res.dart';
-import 'package:adobe/views/about_us/model/about_us_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
-class ColoredCardGrid extends StatelessWidget {
-  final CardViewModel card;
+class ClickableCard extends StatelessWidget {
+  const ClickableCard(
+      {
+    Key? key,
+        this.svg,
+     this.height,
+     this.width,
 
-
-  const ColoredCardGrid({Key? key,  required this.card}) : super(key: key);
-
-
+    required this.onPressed,
+     this.color,
+     this.text,
+      this.image,
+     this.icon,
+  }) : super(key: key);
+  final double? height;
+  final double? width;
+final SvgPicture? svg;
+  final Function() onPressed;
+  final Color? color;
+  final String? text;
+  final Image? image;
+  final IconData? icon;
   @override
   Widget build(BuildContext context) {
-
-    return Padding(
-
-      padding: const EdgeInsets.only(right: 20, left: 20,top: 3,bottom: 3 ),
-      child: Container(
-      height: 120,
+    return
+    Container(
+      height: height,
+      width: width,
       decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(10), color: card.color),
+        color: color,
 
-      child: Padding(
-      padding: const EdgeInsets.all(16),
-      child: Row(
-      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-      children: [
-      Column(
-      crossAxisAlignment: CrossAxisAlignment.end,
-      mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-      children: [
-      Text(
-      card.title,
-      style: const TextStyle(color: Colors.white),
       ),
+      child: InkWell(
+        onTap:onPressed,
+        child: Card(
+          child: Row(
+            children: [
 
+              Column(
+                children: [
+                  svg??Icon(Icons.error_outline_sharp),
 
+                ],
+              ),
+              Column(
+                children: [
+                  Text(text??''),
 
-  ],
-  ),
-  Stack(
-
-    children:[
-      Align(
-        alignment: Alignment.topLeft,
-        child: Column(
-
-    children: [
-    SvgPicture.asset(
-    Res.login,
-    height: 70,
-
-    ),
-    ],
-    ),
-      ),]
-  )
-  ],
-  ),
-  ),
-  ),
-    );
+                ],
+              ),
+            ],
+          ),
+        ),
+      ),
+    )
+      ;
   }
 }

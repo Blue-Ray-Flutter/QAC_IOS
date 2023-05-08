@@ -4,7 +4,7 @@ import 'package:adobe/views/contact_us/contact_us.dart';
 import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../views/about_us/about_us.dart';
+import '../../../../views/about_us/more_item.dart';
 
 class BottomNavItemModel{
   NavBarItem navBarItem;

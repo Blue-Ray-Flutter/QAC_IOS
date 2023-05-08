@@ -1,3 +1,4 @@
+import 'package:adobe/shared/widgets/base_widget/base_widget.dart';
 import 'package:adobe/views/login/login.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
@@ -23,6 +24,6 @@ class MyApp extends StatelessWidget {
       ),
       initialBinding: AppBindings(),
 
-      home: const LoginPage(),
+      home: const BaseWidget(),
     );
   }}
