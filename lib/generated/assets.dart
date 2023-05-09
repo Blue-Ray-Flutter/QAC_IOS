@@ -2,8 +2,19 @@
 class Assets {
   Assets._();
 
-  static const String assetsImagesLogin = 'assets/images/login.svg';
+  static const String imagesAudio = 'assets/images/audio.png';
+  static const String imagesBack2 = 'assets/images/back-2.png';
+  static const String imagesCommities = 'assets/images/commities.png';
+  static const String imagesInfobook = 'assets/images/infobook.png';
+  static const String imagesLeaf = 'assets/images/leaf.png';
   static const String imagesLogin = 'assets/images/login.svg';
-  static const String imagesRegister  = 'assets/images/register.svg';
-
+  static const String imagesMision = 'assets/images/mision.png';
+  static const String imagesNews = 'assets/images/news.png';
+  static const String imagesPrintable = 'assets/images/printable.png';
+  static const String imagesQacHome2 = 'assets/images/qac-home2.png';
+  static const String imagesRegister = 'assets/images/register.svg';
+  static const String imagesSplash2 = 'assets/images/splash-2.png';
+  static const String imagesUtils = 'assets/images/utils.png';
+  static const String imagesVideo = 'assets/images/video.png';
+  static const String imagesVision = 'assets/images/vision.png';
 }

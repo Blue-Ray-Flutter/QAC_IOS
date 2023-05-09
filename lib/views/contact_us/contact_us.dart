@@ -11,138 +11,155 @@ final _formKey = GlobalKey<FormState>();
 class ContactUs extends GetWidget<ContactUsController> {
   const ContactUs({Key? key}) : super(key: key);
 
+  Future<void> goToWebPage(String urlString) async {
+    final Uri _url = Uri.parse(urlString);
+  }
+
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-          title: const Text('Contact Us'),
-        ),
-        body: Padding(
-          padding: const EdgeInsets.all(20.0),
-          child: Form(
-              key: _formKey,
-              child: ListView(
-                children: [
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Full Name',
-                      fillColor: Colors.grey[300]!.withOpacity(0.4),
-                      filled: true,
-                      border: const OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
-                    controller: controller.fullNameController,
-                    obscureText: false,
-                    keyboardType: TextInputType.name,
+    return Form(
+        key: _formKey,
+        child: ListView(
+          physics: const BouncingScrollPhysics(),
+          children: [
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: 'Full Name',
+                fillColor: Colors.grey[300]!.withOpacity(0.4),
+                filled: true,
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              controller: controller.fullNameController,
+              obscureText: false,
+              keyboardType: TextInputType.name,
+            ),
+            const Gap(
+              height: 16,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: 'School or University Name',
+                fillColor: Colors.grey[300]!.withOpacity(0.4),
+                filled: true,
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              controller: controller.schoolNameController,
+              obscureText: false,
+              keyboardType: TextInputType.text,
+            ),
+            const Gap(
+              height: 16,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: 'City or Village Name',
+                fillColor: Colors.grey[300]!.withOpacity(0.4),
+                filled: true,
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              controller: controller.cityNameController,
+              obscureText: false,
+              keyboardType: TextInputType.text,
+            ),
+            const Gap(
+              height: 16,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: 'Phone Number',
+                fillColor: Colors.grey[300]!.withOpacity(0.4),
+                filled: true,
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              controller: controller.phoneController,
+              obscureText: false,
+              keyboardType: TextInputType.phone,
+            ),
+            const Gap(
+              height: 16,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: 'Email Address',
+                fillColor: Colors.grey[300]!.withOpacity(0.4),
+                filled: true,
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              controller: controller.emailController,
+              obscureText: false,
+              keyboardType: TextInputType.emailAddress,
+            ),
+            const Gap(
+              height: 16,
+            ),
+            TextFormField(
+              decoration: InputDecoration(
+                hintText: 'Your Question',
+                fillColor: Colors.grey[300]!.withOpacity(0.4),
+                filled: true,
+                border: const OutlineInputBorder(
+                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+              ),
+              controller: controller.questionController,
+              obscureText: false,
+              keyboardType: TextInputType.text,
+            ),
+            const Gap(
+              height: 16,
+            ),
+            SizedBox(
+              width: double.infinity,
+              height: 60,
+              child: DefaultElevatedButton(
+                onPressed: () {
+                  // Get.to(() => const BottomAsABody());
+                },
+                shape: RoundedRectangleBorder(
+                  side: const BorderSide(color: AppColor.pink),
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                backgroundColor: Colors.pink,
+                child: const Text(
+                  'Send',
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.bold,
+                    color: AppColor.globalInvertedColor,
                   ),
-                  Gap(
-                    height: 16,
+                ),
+              ),
+            ),
+            const Gap(
+              height: 16,
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                IconButton(
+                    onPressed: () async {
+                      await goToWebPage('https//:WWW.facebook.com');
+                    },
+                    icon: Icon(
+                      Icons.facebook,
+                      size: 30,
+                    )),
+                IconButton(
+                  onPressed: () async {
+                    await goToWebPage('https//:WWW.instagram.com');
+                  },
+                  icon: const Icon(
+                    Icons.camera_alt,
+                    size: 30,
                   ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'School or University Name',
-                      fillColor: Colors.grey[300]!.withOpacity(0.4),
-                      filled: true,
-                      border: const OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
-                    controller: controller.schoolNameController,
-                    obscureText: false,
-                    keyboardType: TextInputType.text,
-                  ),
-                  Gap(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'City or Village Name',
-                      fillColor: Colors.grey[300]!.withOpacity(0.4),
-                      filled: true,
-                      border: const OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
-                    controller: controller.cityNameController,
-                    obscureText: false,
-                    keyboardType: TextInputType.text,
-                  ),
-                  Gap(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Phone Number',
-                      fillColor: Colors.grey[300]!.withOpacity(0.4),
-                      filled: true,
-                      border: const OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
-                    controller: controller.phoneController,
-                    obscureText: false,
-                    keyboardType: TextInputType.phone,
-                  ),
-                  Gap(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Email Address',
-                      fillColor: Colors.grey[300]!.withOpacity(0.4),
-                      filled: true,
-                      border: const OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
-                    controller: controller.emailController,
-                    obscureText: false,
-                    keyboardType: TextInputType.emailAddress,
-                  ),
-                  Gap(
-                    height: 16,
-                  ),
-                  TextFormField(
-                    decoration: InputDecoration(
-                      hintText: 'Your Question',
-                      fillColor: Colors.grey[300]!.withOpacity(0.4),
-                      filled: true,
-                      border: const OutlineInputBorder(
-                          borderRadius:
-                              BorderRadius.all(Radius.circular(10.0))),
-                    ),
-                    controller: controller.questionController,
-                    obscureText: false,
-                    keyboardType: TextInputType.text,
-                  ),
-                  Gap(
-                    height: 16,
-                  ),
-                  SizedBox(
-                    width: double.infinity,
-                    height: 60,
-                    child: DefaultElevatedButton(
-                      onPressed: () {
-                        // Get.to(() => const BottomAsABody());
-                      },
-                      shape: RoundedRectangleBorder(
-                        side: const BorderSide(color: AppColor.pink),
-                        borderRadius: BorderRadius.circular(10),
-                      ),
-                      backgroundColor: Colors.white70,
-                      child: const Text(
-                        'Register',
-                        style: TextStyle(
-                          fontSize: 16,
-                          fontWeight: FontWeight.bold,
-                          color: AppColor.globalColor,
-                        ),
-                      ),
-                    ),
-                  )
-                ],
-              )),
+                ),
+              ],
+            )
+          ],
         ));
   }
 }

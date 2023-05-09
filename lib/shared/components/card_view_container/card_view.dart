@@ -2,22 +2,20 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 class ClickableCard extends StatelessWidget {
-  const ClickableCard(
-      {
+  const ClickableCard({
     Key? key,
-        this.svg,
-     this.height,
-     this.width,
-
+    this.svg,
+    this.height,
+    this.width,
     required this.onPressed,
-     this.color,
-     this.text,
-      this.image,
-     this.icon,
+    this.color,
+    this.text,
+    this.image,
+    this.icon,
   }) : super(key: key);
   final double? height;
   final double? width;
-final SvgPicture? svg;
+  final String? svg;
   final Function() onPressed;
   final Color? color;
   final String? text;
@@ -25,37 +23,48 @@ final SvgPicture? svg;
   final IconData? icon;
   @override
   Widget build(BuildContext context) {
-    return
-    Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: color,
-
-      ),
-      child: InkWell(
-        onTap:onPressed,
-        child: Card(
-          child: Row(
-            children: [
-
-              Column(
-                children: [
-                  svg??Icon(Icons.error_outline_sharp),
-
-                ],
-              ),
-              Column(
-                children: [
-                  Text(text??''),
-
-                ],
-              ),
-            ],
+    return Card(
+      color: color,
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Row(children: [
+          Expanded(
+            flex: 3,
+            child: Container(
+                alignment: Alignment.centerLeft,
+                child: Column(
+                    children: [
+                  Text(
+                    text!,
+                    textAlign: TextAlign.start,
+                    style: const TextStyle(
+                      color: Colors.white,
+                      fontSize: 20,
+                    ),
+                  ),
+                ])),
           ),
+          Expanded(
+            flex: 2,
+            child: Padding(
+              padding: const EdgeInsetsDirectional.only(start: 8.0,top: 3),
+              child: Image.asset(
+                svg!,
+                color: Colors.white.withOpacity(0.4),
+                fit: BoxFit.cover,
+                scale: 0.6,
+                height: 100,
+                width: 40,
+              ),
+            ),
+          ),
+
+
+        ]
         ),
-      ),
-    )
-      ;
+
+      )
+      ,
+    );
   }
 }

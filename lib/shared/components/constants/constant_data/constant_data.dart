@@ -1,49 +1,88 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../../views/about_us/model/more_item_model.dart';
+import '../../../../res.dart';
+import '../../../../views/more_item/model/more_item_model.dart';
+import '../style/color.dart';
 
 List<MoreItemModel> moreItemList = [
   MoreItemModel(
-    svg: SvgPicture.asset('assets/login.svg'),
+    svg: Res.infobook,
     onPressed: () {},
-    color: Colors.blue,
+    color: AppColor.blueBanner,
     text: 'About Us',
-    height: 200,
-    width: 200,
+    height: 300,
+    width: 300,
     icon: Icons.add,
   ),
   MoreItemModel(
-    svg: SvgPicture.asset('assets/login.svg'),
+    svg: Res.utils,
     onPressed: () {},
-    color: Colors.purple,
+    color: AppColor.purpleBanner,
     text: ' Our Utilities',
-    height: 200,
-    width: 200,
+    height: 300,
+    width: 300,
   ),
   MoreItemModel(
-    svg: SvgPicture.asset('assets/login.svg'),
+    svg: Res.vision,
     onPressed: () {},
-    color: Colors.deepOrange,
+    color: AppColor.orangeBanner,
     text: ' Our Vision',
-    height: 200,
-    width: 200,
+    height: 250,
+    width: 250,
   ),
   MoreItemModel(
-    svg: SvgPicture.asset('assets/login.svg'),
+    svg: Res.mision,
     onPressed: () {},
-    color: Colors.green,
+    color: AppColor.greenBanner,
     text: ' Our Mission',
-    height: 200,
-    width: 200,
+    height: 300,
+    width: 300,
   ),
   MoreItemModel(
-    svg: SvgPicture.asset('assets/login.svg'),
+    svg: Res.commities,
     onPressed: () {},
-    color: Colors.pink,
+    color: AppColor.darkRedBanner,
     text: 'Committees',
-    height: 200,
-    width: 200,
+    height: 300,
+    width: 300,
+  ),
+];
+List<MoreItemModel> mediaCenter =[
+
+  MoreItemModel(
+    svg: Res.printable,
+    onPressed: () {},
+    color: AppColor.blueBanner,
+    text: 'Printed Media',
+    height: 300,
+    width: 300,
+    icon: Icons.add,
+  ),
+  MoreItemModel(
+    svg: Res.news,
+    onPressed: () {},
+    color: AppColor.purpleBanner,
+    text: 'News',
+    height: 300,
+    width: 300,
+  ),
+  MoreItemModel(
+    svg: Res.video,
+    onPressed: () {},
+    color:AppColor.orangeBanner,
+    text: 'Videos Gallery ',
+    height: 250,
+    width: 250,
+  ),
+
+  MoreItemModel(
+    svg: Res.audio,
+    onPressed: () {},
+    color: AppColor.greenBanner,
+    text: 'Audibles',
+    height: 300,
+    width: 300,
   ),
 ];
 

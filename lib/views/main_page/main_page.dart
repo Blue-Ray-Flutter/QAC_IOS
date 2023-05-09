@@ -1,78 +1,80 @@
-import 'package:adobe/shared/components/button/bottom_navigation_bar.dart';
-import 'package:adobe/shared/components/button/button.dart';
-import 'package:adobe/shared/components/gap/gap.dart';
+import 'package:adobe/shared/components/constants/style/color.dart';
+import 'package:adobe/shared/components/widget/size_config.dart';
 import 'package:adobe/views/main_page/controller/main_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class MainPage extends GetWidget<MainPageController>{
+import '../../res.dart';
+
+class MainPage extends GetWidget<MainPageController> {
   const MainPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Scaffold(
-          body: SizedBox.expand(
-        child: PageView(
-          physics: const ScrollPhysics(
-            parent: NeverScrollableScrollPhysics(),
-
-          ),
-          controller:  controller.pageController,
+    SizeConfig().init(context);
+    return Scaffold(
+      body: SizedBox(
+        child: Stack(
+          // alignment: AlignmentDirectional.bottomCenter,
           children: [
             Container(
-              child:
-             CircleAvatar(
-               backgroundColor: Colors.red,
-               radius: 30,
-               child:
-               TextButton(onPressed:(){},
-               child:const Text('Apply',style:TextStyle(color: Colors.white),)),
-             )
-            )
+              decoration: BoxDecoration(
+                color: Colors.grey.withOpacity(0.1),
+                borderRadius: const BorderRadius.only(
+                    bottomLeft: Radius.circular(500),
+                    bottomRight: Radius.circular(500)),
+              ),
+            ),
+            Container(
+              height: SizeConfig.screenHeight * 0.7,
+              width: SizeConfig.screenWidth,
+              decoration: const BoxDecoration(
+                  image: DecorationImage(
+                image: AssetImage(Res.leaf),
+                fit: BoxFit.fitWidth,
+              )),
+            ),
+            const Positioned(
+                bottom: 180,
+                left: 35,
+                child: Text(
+                  'Awareness Campaign to restore the Ecosystem',
+                  textAlign: TextAlign.center,
+                  style: TextStyle(fontSize: 15, color: AppColor.pink),
+                )),
+            const Positioned(
+                bottom: 150,
+                left: 35,
+                child: Text(
+                  ' Minor daily actions can make a big difference',
+                  style: TextStyle(fontSize: 15, color: Colors.black),
+                )),
+            Positioned(
+              bottom: 65,
+              left: 180,
+              child: SizedBox(
+                height: 70,
+                width: 70,
+                child: ElevatedButton(
+                    style: ElevatedButton.styleFrom(
+                      shape: const CircleBorder(),
+                      backgroundColor: Colors.pink,
+                      padding: const EdgeInsets.all(10),
+                    ),
+                    onPressed: () {},
+                    child: const Text(
+                      'Apply',
+                      style: TextStyle(
+                          fontSize: 10,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.white),
+                    )),
+              ),
+            ),
           ],
         ),
       ),
-          // bottomNavigationBar: MyBottomNavigationBar(),
-
-
-
-
-              ),
-
-      // ListView.separated(
-      //
-      //   scrollDirection: Axis.horizontal,
-      //   shrinkWrap: true,
-      //
-      //   itemBuilder: (BuildContext context, int index) { return
-      //       Padding(
-      //         padding: const EdgeInsets.only(bottom: 20,left: 8),
-      //         child: Align(
-      //           alignment: Alignment.bottomCenter,
-      //           child: Container(
-      //     height: 60,
-      //     width: 60,
-      //     decoration: BoxDecoration(
-      //           color: Colors.red,
-      //           borderRadius: BorderRadius.circular(30),
-      //     ),
-      //     child: IconButton(onPressed: (){}, icon: const Icon(Icons.add),),
-      //
-      //
-      //   ),
-      //         ),
-      //       ); },
-      //
-      //   separatorBuilder: (BuildContext context, int index) {  return const Gap(width: 10,); },
-      //   itemCount: 5,
-      //
-      //
-      //
-      // ),
-
-          );
-
-
+      // bottomNavigationBar: MyBottomNavigationBar(),
+    );
   }
 }

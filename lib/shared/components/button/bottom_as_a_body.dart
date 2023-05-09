@@ -77,8 +77,8 @@ Widget buildBottomNavItem({
   return Padding(
     padding: const EdgeInsets.symmetric(horizontal: 8),
     child: SizedBox(
-      height: 50,
-      width: 50,
+      height: 60,
+      width: 60,
       child: ElevatedButton(
         style: ElevatedButton.styleFrom(
           shape: const CircleBorder(),

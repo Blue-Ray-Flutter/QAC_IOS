@@ -4,7 +4,7 @@ import 'package:adobe/views/contact_us/contact_us.dart';
 import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../views/about_us/more_item.dart';
+import '../../../../views/more_item/more_item.dart';
 
 class BottomNavItemModel {
   NavBarItem navBarItem;
@@ -30,33 +30,33 @@ enum NavBarItem {
 
 List navScreens = <BottomNavItemModel>[
   BottomNavItemModel(
-    name: 'Home',
-    icon: Icons.home,
-    navBarItem: NavBarItem.home,
-    widget: const MainPage(),
+    name: 'Add',
+    icon: Icons.add_circle_outline,
+    navBarItem: NavBarItem.add,
+    widget: const Add(),
   ),
   BottomNavItemModel(
     name: 'Announcement',
-    icon: Icons.announcement,
+    icon: Icons.campaign_outlined,
     navBarItem: NavBarItem.announcement,
     widget: const Announcement(),
   ),
   BottomNavItemModel(
-    name: 'About Us',
-    icon: Icons.info,
-    navBarItem: NavBarItem.aboutUs,
-    widget: const AboutUs(),
+    name: 'Home',
+    icon: Icons.home_outlined,
+    navBarItem: NavBarItem.home,
+    widget: const MainPage(),
   ),
   BottomNavItemModel(
     name: 'Contact Us',
-    icon: Icons.contact_page,
+    icon: Icons.email_outlined,
     navBarItem: NavBarItem.contactus,
     widget: const ContactUs(),
   ),
   BottomNavItemModel(
-    name: 'Add',
-    icon: Icons.add,
-    navBarItem: NavBarItem.add,
-    widget: const Add(),
+    name: 'About Us',
+    icon: Icons.import_contacts_outlined,
+    navBarItem: NavBarItem.aboutUs,
+    widget: const AboutUs(),
   ),
 ];

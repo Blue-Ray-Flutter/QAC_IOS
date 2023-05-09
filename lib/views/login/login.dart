@@ -1,4 +1,3 @@
-import 'package:adobe/shared/components/button/button.dart';
 import 'package:adobe/shared/components/button/elevated_button.dart';
 import 'package:adobe/shared/components/gap/gap.dart';
 import 'package:adobe/views/login/controller/login_controller.dart';
@@ -22,6 +21,7 @@ class LoginPage extends GetWidget<LoginController> {
     return SafeArea(
         child: Scaffold(
       body: SingleChildScrollView(
+        physics: const BouncingScrollPhysics(),
         child: Form(
           key: _formKey,
           child: Padding(
@@ -31,7 +31,6 @@ class LoginPage extends GetWidget<LoginController> {
                 Padding(
                   padding: const EdgeInsets.all(4.0),
                   child: CarouselSlider(
-
                     items: [
                       SizedBox(
                         width: 350,
@@ -49,7 +48,6 @@ class LoginPage extends GetWidget<LoginController> {
                       ),
                     ],
                     options: CarouselOptions(
-
                       autoPlayCurve: Curves.fastOutSlowIn,
                       autoPlay: true,
                       autoPlayAnimationDuration: const Duration(
@@ -93,7 +91,7 @@ class LoginPage extends GetWidget<LoginController> {
                     }
 
                     bool emailValid = RegExp(
-                        r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
+                            r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@[a-zA-Z0-9]+\.[a-zA-Z]+")
                         .hasMatch(value);
                     if (!emailValid) {
                       return 'Please enter a valid email';
@@ -105,8 +103,7 @@ class LoginPage extends GetWidget<LoginController> {
                     fillColor: Colors.grey[300]!.withOpacity(0.4),
                     filled: true,
                     border: const OutlineInputBorder(
-                        borderRadius:
-                            BorderRadius.all(Radius.circular(10.0))),
+                        borderRadius: BorderRadius.all(Radius.circular(10.0))),
                   ),
                   controller: controller.emailController,
                   obscureText: false,
@@ -125,7 +122,7 @@ class LoginPage extends GetWidget<LoginController> {
                 ),
                 const Gap(),
                 Obx(
-                    ()=>TextFormField(
+                  () => TextFormField(
                     validator: (password) {
                       if (password == null || password.isEmpty) {
                         return 'Please enter some text';
@@ -138,7 +135,7 @@ class LoginPage extends GetWidget<LoginController> {
                     },
                     obscureText: controller.obscureText.value,
                     decoration: InputDecoration(
-                      suffixIcon:IconButton(
+                      suffixIcon: IconButton(
                         icon: Icon(
                           controller.obscureText.value
                               ? Icons.visibility_off
@@ -147,16 +144,13 @@ class LoginPage extends GetWidget<LoginController> {
                         onPressed: controller.toggleObscureText,
                       ),
                       fillColor: Colors.grey[300]!.withOpacity(0.4),
-
                       filled: true,
-
                       border: const OutlineInputBorder(
-                          borderSide: BorderSide(color:AppColor.globalColor),
+                          borderSide: BorderSide(color: AppColor.globalColor),
                           borderRadius:
                               BorderRadius.all(Radius.circular(10.0))),
                     ),
                     controller: controller.passwordController,
-
                   ),
                 ),
                 TextButton(
@@ -176,12 +170,13 @@ class LoginPage extends GetWidget<LoginController> {
                   child: DefaultElevatedButton(
                     backgroundColor: Colors.green,
                     onPressed: () {
-                     if (_formKey.currentState!.validate()) {
-                       controller.logIn();
-                        }
-                    }, shape:  RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
+                      if (_formKey.currentState!.validate()) {
+                        controller.logIn();
+                      }
+                    },
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     child: const Text(
                       'Login',
                       style: TextStyle(
@@ -196,20 +191,14 @@ class LoginPage extends GetWidget<LoginController> {
                   width: double.infinity,
                   height: 60,
                   child: DefaultElevatedButton(
-
-
                     onPressed: () {
-
                       Get.to(() => const RegisterPage());
-                    }, shape:RoundedRectangleBorder(
-                    side : const BorderSide(color: AppColor.globalColor),
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-
-
+                    },
+                    shape: RoundedRectangleBorder(
+                      side: const BorderSide(color: AppColor.globalColor),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
                     backgroundColor: Colors.white70,
-
-
                     child: const Text(
                       'Register',
                       style: TextStyle(

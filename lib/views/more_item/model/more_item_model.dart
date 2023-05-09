@@ -7,7 +7,7 @@ class MoreItemModel {
   final double height;
   final double width;
   final Image? image;
-  final SvgPicture svg;
+  final String? svg;
   final IconData? icon;
   final Function()onPressed;
   final Color color;
