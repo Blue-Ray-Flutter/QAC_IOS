@@ -28,7 +28,22 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
               ),
               controller: controller.fullNameController,
               obscureText: false,
@@ -43,7 +58,22 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
               ),
               controller: controller.schoolNameController,
               obscureText: false,
@@ -58,7 +88,22 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
               ),
               controller: controller.cityNameController,
               obscureText: false,
@@ -73,7 +118,19 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
               ),
               controller: controller.phoneController,
               obscureText: false,
@@ -88,7 +145,22 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
               ),
               controller: controller.emailController,
               obscureText: false,
@@ -103,7 +175,23 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                    borderRadius: BorderRadius.all(Radius.circular(10.0))),
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
+                enabledBorder: const OutlineInputBorder(
+                  borderSide: BorderSide(
+                    color: Colors.pink,
+                    width: 2,
+                  ),
+                  borderRadius: BorderRadius.all(
+                    Radius.circular(10.0),
+                  ),
+                ),
               ),
               controller: controller.questionController,
               obscureText: false,
@@ -144,7 +232,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                     onPressed: () async {
                       await goToWebPage('https//:WWW.facebook.com');
                     },
-                    icon: Icon(
+                    icon: const Icon(
                       Icons.facebook,
                       size: 30,
                     )),
