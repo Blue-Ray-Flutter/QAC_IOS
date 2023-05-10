@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/flutter_svg.dart';
 
 class ClickableCard extends StatelessWidget {
   const ClickableCard({
@@ -25,46 +24,49 @@ class ClickableCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Card(
       color: color,
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Row(children: [
-          Expanded(
-            flex: 3,
-            child: Container(
-                alignment: Alignment.centerLeft,
-                child: Column(
-                    children: [
-                  Text(
-                    text!,
-                    textAlign: TextAlign.start,
-                    style: const TextStyle(
-                      color: Colors.white,
-                      fontSize: 20,
+      child: ElevatedButton(
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: color,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+        ),
+        onPressed: onPressed,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Row(children: [
+            Expanded(
+              flex: 3,
+              child: Container(
+                  alignment: Alignment.centerLeft,
+                  child: Column(children: [
+                    Text(
+                      text!,
+                      textAlign: TextAlign.start,
+                      style: const TextStyle(
+                        color: Colors.white,
+                        fontSize: 20,
+                      ),
                     ),
-                  ),
-                ])),
-          ),
-          Expanded(
-            flex: 2,
-            child: Padding(
-              padding: const EdgeInsetsDirectional.only(start: 8.0,top: 3),
-              child: Image.asset(
-                svg!,
-                color: Colors.white.withOpacity(0.4),
-                fit: BoxFit.cover,
-                scale: 0.6,
-                height: 100,
-                width: 40,
+                  ])),
+            ),
+            Expanded(
+              flex: 2,
+              child: Padding(
+                padding: const EdgeInsetsDirectional.only(start: 8.0, top: 3),
+                child: Image.asset(
+                  svg!,
+                  color: Colors.white.withOpacity(0.4),
+                  fit: BoxFit.cover,
+                  scale: 0.6,
+                  height: 100,
+                  width: 40,
+                ),
               ),
             ),
-          ),
-
-
-        ]
+          ]),
         ),
-
-      )
-      ,
+      ),
     );
   }
 }

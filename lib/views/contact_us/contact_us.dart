@@ -28,16 +28,14 @@ class ContactUs extends GetWidget<ContactUsController> {
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
-                  borderSide: BorderSide(
-                    color: Colors.pink,
-                  ),
+                  borderSide: BorderSide(),
                   borderRadius: BorderRadius.all(
                     Radius.circular(10.0),
                   ),
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink,
+                    color: AppColor.blueBanner,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.all(
@@ -67,7 +65,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink,
+                    color: AppColor.blueBanner,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.all(
@@ -97,7 +95,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink,
+                    color: AppColor.blueBanner,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.all(
@@ -124,7 +122,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink,
+                    color: AppColor.blueBanner,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.all(
@@ -154,7 +152,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink,
+                    color: AppColor.blueBanner,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.all(
@@ -185,7 +183,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                 ),
                 enabledBorder: const OutlineInputBorder(
                   borderSide: BorderSide(
-                    color: Colors.pink,
+                    color: AppColor.blueBanner,
                     width: 2,
                   ),
                   borderRadius: BorderRadius.all(
@@ -230,7 +228,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               children: [
                 IconButton(
                     onPressed: () async {
-                      await goToWebPage('https//:WWW.facebook.com');
+                      await goToWebPage('https://www.facebook.com/qac.jo');
                     },
                     icon: const Icon(
                       Icons.facebook,
@@ -238,7 +236,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                     )),
                 IconButton(
                   onPressed: () async {
-                    await goToWebPage('https//:WWW.instagram.com');
+                    await goToWebPage('https://www.youtube.com/user/qacjo');
                   },
                   icon: const Icon(
                     Icons.camera_alt,

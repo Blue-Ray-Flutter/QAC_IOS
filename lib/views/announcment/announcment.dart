@@ -15,13 +15,13 @@ class Announcement extends StatelessWidget {
       child: ListView.builder(
         itemBuilder: (BuildContext context, int index) {
           return ClickableCard(
-            onPressed: moreItemList[index].onPressed,
-            svg: mediaCenter[index].svg,
-            color: mediaCenter[index].color,
-            text: mediaCenter[index].text,
+            onPressed: mediaCenterList[index].onPressed,
+            svg: mediaCenterList[index].svg,
+            color: mediaCenterList[index].color,
+            text: mediaCenterList[index].text,
           );
         },
-        itemCount: mediaCenter.length,
+        itemCount: mediaCenterList.length,
       ),
     );
   }

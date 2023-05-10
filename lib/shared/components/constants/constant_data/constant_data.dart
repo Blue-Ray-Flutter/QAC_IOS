@@ -1,5 +1,14 @@
+import 'package:adobe/views/web_views/Audibles_web_view.dart';
+import 'package:adobe/views/web_views/about_web_view.dart';
+import 'package:adobe/views/web_views/committees_web_view.dart';
+import 'package:adobe/views/web_views/media_center.dart';
+import 'package:adobe/views/web_views/mission_web_view.dart';
+import 'package:adobe/views/web_views/news_web_view.dart';
+import 'package:adobe/views/web_views/utilities_web_view.dart';
+import 'package:adobe/views/web_views/videos_web_view.dart';
+import 'package:adobe/views/web_views/vision_web_view.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
 
 import '../../../../res.dart';
 import '../../../../views/more_item/model/more_item_model.dart';
@@ -8,7 +17,9 @@ import '../style/color.dart';
 List<MoreItemModel> moreItemList = [
   MoreItemModel(
     svg: Res.infobook,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => AboutUsWebView());
+    },
     color: AppColor.blueBanner,
     text: 'About Us',
     height: 300,
@@ -17,7 +28,9 @@ List<MoreItemModel> moreItemList = [
   ),
   MoreItemModel(
     svg: Res.utils,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => UtilitiesWebView());
+    },
     color: AppColor.purpleBanner,
     text: ' Our Utilities',
     height: 300,
@@ -25,7 +38,9 @@ List<MoreItemModel> moreItemList = [
   ),
   MoreItemModel(
     svg: Res.vision,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => VisionWebView());
+    },
     color: AppColor.orangeBanner,
     text: ' Our Vision',
     height: 250,
@@ -33,7 +48,9 @@ List<MoreItemModel> moreItemList = [
   ),
   MoreItemModel(
     svg: Res.mision,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => MissionWebView());
+    },
     color: AppColor.greenBanner,
     text: ' Our Mission',
     height: 300,
@@ -41,18 +58,21 @@ List<MoreItemModel> moreItemList = [
   ),
   MoreItemModel(
     svg: Res.commities,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => CommitteesWebView());
+    },
     color: AppColor.darkRedBanner,
     text: 'Committees',
     height: 300,
     width: 300,
   ),
 ];
-List<MoreItemModel> mediaCenter =[
-
+List<MoreItemModel> mediaCenterList = [
   MoreItemModel(
     svg: Res.printable,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => MediaCenterWebView());
+    },
     color: AppColor.blueBanner,
     text: 'Printed Media',
     height: 300,
@@ -61,7 +81,9 @@ List<MoreItemModel> mediaCenter =[
   ),
   MoreItemModel(
     svg: Res.news,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => NewsWebView());
+    },
     color: AppColor.purpleBanner,
     text: 'News',
     height: 300,
@@ -69,16 +91,19 @@ List<MoreItemModel> mediaCenter =[
   ),
   MoreItemModel(
     svg: Res.video,
-    onPressed: () {},
-    color:AppColor.orangeBanner,
+    onPressed: () {
+      Get.to(() => VideosWebView());
+    },
+    color: AppColor.orangeBanner,
     text: 'Videos Gallery ',
     height: 250,
     width: 250,
   ),
-
   MoreItemModel(
     svg: Res.audio,
-    onPressed: () {},
+    onPressed: () {
+      Get.to(() => AudiblesWebView());
+    },
     color: AppColor.greenBanner,
     text: 'Audibles',
     height: 300,
