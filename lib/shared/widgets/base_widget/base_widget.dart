@@ -2,6 +2,7 @@ import 'package:adobe/shared/components/constants/style/color.dart';
 import 'package:adobe/shared/components/widget/size_config.dart';
 import 'package:flutter/material.dart';
 
+import '../../../main.dart';
 import '../../components/button/bottom_as_a_body.dart';
 import '../../components/constants/constant_data/constant_data.dart';
 import '../../components/nav_screen/nav_screen_model/nav_screen_model.dart';
@@ -26,21 +27,24 @@ class _BaseWidgetState extends State<BaseWidget> {
           ),
           child: Align(
             alignment: Alignment.center,
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: navScreens.length,
-              scrollDirection: Axis.horizontal,
-              itemBuilder: (context, index) => buildBottomNavItem(
-                  activeIconColor:
-                      indexNav == index ? Colors.white : Colors.black,
-                  iconData: navScreens[index].icon,
-                  onPressed: () {
-                    setState(() {
-                      indexNav = index;
-                    });
-                  },
-                  activeColor:
-                      indexNav == index ? AppColor.globalColor : Colors.white),
+            child: ScrollConfiguration(
+              behavior: MyBehavior(),
+              child: ListView.builder(
+                shrinkWrap: true,
+                itemCount: navScreens.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) => buildBottomNavItem(
+                    activeIconColor:
+                        indexNav == index ? Colors.white : Colors.black,
+                    iconData: navScreens[index].icon,
+                    onPressed: () {
+                      setState(() {
+                        indexNav = index;
+                      });
+                    },
+                    activeColor:
+                        indexNav == index ? AppColor.globalColor : Colors.white),
+              ),
             ),
           ),
         ),

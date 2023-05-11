@@ -206,7 +206,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                   // Get.to(() => const BottomAsABody());
                 },
                 shape: RoundedRectangleBorder(
-                  side: const BorderSide(color: AppColor.pink),
+                  side: const BorderSide(color: Colors.pink),
                   borderRadius: BorderRadius.circular(10),
                 ),
                 backgroundColor: Colors.pink,

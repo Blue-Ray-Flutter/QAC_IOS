@@ -15,10 +15,10 @@ class MainPage extends GetWidget<MainPageController> {
     return Scaffold(
       body: SizedBox(
         child: Stack(
-          // alignment: AlignmentDirectional.bottomCenter,
+          alignment: AlignmentDirectional.bottomCenter,
           children: [
             Container(
-              height: SizeConfig.screenHeight * 0.8,
+              height: SizeConfig.screenHeight * 0.77,
               width: SizeConfig.screenWidth,
               decoration: BoxDecoration(
                 color: Colors.grey.withOpacity(0.1),
@@ -28,49 +28,68 @@ class MainPage extends GetWidget<MainPageController> {
               ),
             ),
             Container(
-              height: SizeConfig.screenHeight * 0.7,
-              width: SizeConfig.screenWidth,
+              height: SizeConfig.screenHeight * 0.8,
+              width: SizeConfig.screenWidth*0.8,
               decoration: const BoxDecoration(
                   image: DecorationImage(
                 image: AssetImage(Res.leaf),
                 fit: BoxFit.fitWidth,
               )),
             ),
-            const Positioned(
-                bottom: 180,
-                left: 35,
-                child: Center(
-                  child: Text(
+            // const Positioned(
+            //     bottom: 180,
+            //     left: 35,
+            //     child: Center(
+            //       child: Text(
+            //         'Awareness Campaign to restore the Ecosystem',
+            //         textAlign: TextAlign.center,
+            //         style: TextStyle(fontSize: 15, color: Colors.pink),
+            //       ),
+            //     )),
+            // const Positioned(
+            //   bottom: 150,
+            //   left: 35,
+            //   child: Center(
+            //     child: Text(
+            //       ' Minor daily actions can make a big difference',
+            //       style: TextStyle(fontSize: 15, color: Colors.black),
+            //     ),
+            //   ),
+            // ),
+            SizedBox(
+              height: SizeConfig.screenHeight * 0.4,
+              width: SizeConfig.screenWidth,
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: const [
+                  Text(
                     'Awareness Campaign to restore the Ecosystem',
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontSize: 15, color: AppColor.pink),
+                    style: TextStyle(fontSize: 15, color: Colors.pink),
                   ),
-                )),
-            const Positioned(
-              bottom: 150,
-              left: 35,
-              child: Center(
-                child: Text(
-                  ' Minor daily actions can make a big difference',
-                  style: TextStyle(fontSize: 15, color: Colors.black),
-                ),
+                  Text(
+                    ' Minor daily actions can make a big difference',
+                    style: TextStyle(fontSize: 15, color: Colors.black),
+                  ),
+                ],
               ),
             ),
-            Align(
-              alignment: Alignment.bottomCenter,
+            SizedBox(
+              height: SizeConfig.screenHeight * 0.2,
+              width: SizeConfig.screenWidth,
               child: Stack(
                 alignment: AlignmentDirectional.center,
                 children: [
                   Container(
                     decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color:Colors.purple),
+                        shape: BoxShape.circle, color:AppColor.lightPink),
                     height:  SizeConfig.screenHeight*0.75,
                     width: SizeConfig.screenWidth*0.2,
                   ),
                   Container(
 
                     decoration: const BoxDecoration(
-                        shape: BoxShape.circle, color:Colors.pink),
+                        shape: BoxShape.circle, color:AppColor.lightPink),
                     height:  SizeConfig.screenHeight*0.15,
                     width: SizeConfig.screenWidth*0.15,
 
