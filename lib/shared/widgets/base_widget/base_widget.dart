@@ -18,93 +18,77 @@ class _BaseWidgetState extends State<BaseWidget> {
   @override
   Widget build(BuildContext context) {
     SizeConfig().init(context);
-    return Scaffold(
-        bottomNavigationBar: Container(
-          height: 120,
-          decoration: BoxDecoration(
-            color: Colors.white.withOpacity(0.1),
-            borderRadius: const BorderRadius.all(Radius.circular(100)),
-          ),
-          child: Align(
-            alignment: Alignment.center,
-            child: ScrollConfiguration(
-              behavior: MyBehavior(),
-              child: ListView.builder(
-                shrinkWrap: true,
-                itemCount: navScreens.length,
-                scrollDirection: Axis.horizontal,
-                itemBuilder: (context, index) => buildBottomNavItem(
-                    activeIconColor:
-                        indexNav == index ? Colors.white : Colors.black,
-                    iconData: navScreens[index].icon,
-                    onPressed: () {
-                      setState(() {
-                        indexNav = index;
-                      });
-                    },
-                    activeColor:
-                        indexNav == index ? AppColor.globalColor : Colors.white),
+    return SafeArea(
+      child: Scaffold(
+          bottomNavigationBar: Container(
+            height: SizeConfig.screenHeight * 0.118,
+            decoration: BoxDecoration(
+              color: Colors.white.withOpacity(0.1),
+              borderRadius: const BorderRadius.all(Radius.circular(100)),
+            ),
+            child: Align(
+              alignment: Alignment.center,
+              child: ScrollConfiguration(
+                behavior: MyBehavior(),
+                child: ListView.builder(
+                  shrinkWrap: true,
+                  itemCount: navScreens.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) => buildBottomNavItem(
+                      activeIconColor:
+                          indexNav == index ? Colors.white : Colors.black,
+                      iconData: navScreens[index].icon,
+                      onPressed: () {
+                        setState(() {
+                          indexNav = index;
+                        });
+                      },
+                      activeColor: indexNav == index
+                          ? AppColor.globalColor
+                          : Colors.white),
+                ),
               ),
             ),
           ),
-        ),
-        // appBar: navScreens[indexNav].navBarItem == NavBarItem.home
-        //     ? AppBar(
-        //         elevation: 0,
-        //         backgroundColor: Colors.white,
-        //       )
-        //     : AppBar(
-        //         centerTitle: true,
-        //         leading: BackButton(
-        //           onPressed: () {
-        //             Navigator.pop(context);
-        //           },
-        //           color: Colors.lightBlueAccent,
-        //         ),
-        //         title: Text(navScreens[indexNav].name,
-        //             style: const TextStyle(
-        //               fontSize: 20,
-        //               color: Colors.black,
-        //             )),
-        //         backgroundColor: Colors.white,
-        //         elevation: 1,
-        //       ),
-        body: Stack(
-          children: [
-            Padding(
-              padding: navScreens[indexNav].navBarItem == NavBarItem.home
-                  ? const EdgeInsetsDirectional.only(top: 0)
-                  : const EdgeInsetsDirectional.only(
-                      top: 90,
-                      start: 30,
-                      end: 30,
-                    ),
-              child: navScreens[indexNav].widget,
-            ),
-            navScreens[indexNav].navBarItem == NavBarItem.home
-                ? const SizedBox(
-                    height: 1,
-                  )
-                : SizedBox(
-                    height: 105,
-                    child: AppBar(
-                      centerTitle: true,
-                      leading: BackButton(
-                        onPressed: () {
-                          Navigator.pop(context);
-                        },
-                        color: Colors.lightBlueAccent,
+          body: Stack(
+            children: [
+              Padding(
+                padding: navScreens[indexNav].navBarItem == NavBarItem.home
+                    ? const EdgeInsetsDirectional.only(top: 0)
+                    : const EdgeInsetsDirectional.only(
+                        top: 60,
+                        start: 30,
+                        end: 30,
                       ),
-                      title: Text(navScreens[indexNav].name,
-                          style: const TextStyle(
-                            fontSize: 20,
-                            color: Colors.black,
-                          )),
-                      backgroundColor: Colors.white,
-                      elevation: 1,
-                    ),
-                  )
-          ],
-        ));
+                child: navScreens[indexNav].widget,
+              ),
+              navScreens[indexNav].navBarItem == NavBarItem.home
+                  ? Container()
+                  : SizedBox(
+                      height: 60,
+                      child: Center(
+                        child: AppBar(
+                          centerTitle: true,
+                          leading: BackButton(
+                            onPressed: () {
+                              setState(() {
+                                indexNav = 1;
+                              });
+                            },
+                            color: Colors.lightBlueAccent,
+                          ),
+                          title: Text(navScreens[indexNav].name,
+                              style: const TextStyle(
+                                fontSize: 20,
+                                color: Colors.black,
+                              )),
+                          backgroundColor: Colors.white,
+                          elevation: 1,
+                        ),
+                      ),
+                    )
+            ],
+          )),
+    );
   }
 }

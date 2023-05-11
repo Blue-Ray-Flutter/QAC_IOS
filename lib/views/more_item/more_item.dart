@@ -7,14 +7,16 @@ import '../../main.dart';
 class AboutUs extends StatelessWidget {
   const AboutUs({Key? key}) : super(key: key);
 
-  // static const List<SvgPicture> _icons = [
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(8.0),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ScrollConfiguration(
         behavior: MyBehavior(),
         child: ListView.builder(
+          padding: const EdgeInsets.symmetric(
+            vertical: 20,
+          ),
           itemBuilder: (BuildContext context, int index) {
             return ClickableCard(
               onPressed: moreItemList[index].onPressed,

@@ -1,11 +1,12 @@
 import 'package:adobe/res.dart';
 import 'package:adobe/shared/components/constants/constant_data/constant_data.dart';
-import 'package:adobe/views/login/login.dart';
+import 'package:adobe/shared/widgets/base_widget/base_widget.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:get/get_navigation/src/root/get_material_app.dart';
 import 'package:onesignal_flutter/onesignal_flutter.dart';
+
 import 'binding/app_binding.dart';
 
 Future<void> main() async {
@@ -41,14 +42,14 @@ class _MyAppState extends State<MyApp> {
           duration: 3000,
           splash: Res.splash_2,
           splashIconSize: 1500,
-          nextScreen: const LoginPage(),
+          nextScreen: const BaseWidget(),
         ));
   }
 }
 
 Future<void> initPlatformState() async {
   OneSignal.shared.setLogLevel(OSLogLevel.verbose, OSLogLevel.none);
-  await OneSignal.shared.setAppId(AppId);
+  await OneSignal.shared.setAppId(appId);
   OneSignal.shared.promptUserForPushNotificationPermission().then((accepted) {
     debugPrint("Accepted permission: $accepted");
   });

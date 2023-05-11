@@ -1,22 +1,52 @@
-import 'package:flutter/cupertino.dart';
+import 'package:adobe/shared/components/constants/style/color.dart';
+import 'package:adobe/views/main_page/model/flag_model.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:get_storage/get_storage.dart';
 
-class MainPageController extends GetxController{
+import '../../../api/repo/http_repo.dart';
+import '../../../api/repo/http_repo_implementaion.dart';
+import '../../../shared/helper/cache_utils.dart';
 
+class MainPageController extends GetxController {
   MainPageController();
-  late PageController pageController;
-  RxInt currentIndex = 0.obs ;
+
+  RxInt currentIndex = 0.obs;
   GlobalKey bottomNavigationKey = GlobalKey();
+
+  Rx<FlagModel?> flagModel = Rx<FlagModel?>(null);
+
   @override
   void onInit() {
-    pageController = PageController();
+    initialization();
     super.onInit();
   }
-  @override
-  void onClose() {
-    pageController.dispose();
-    super.onClose();
+
+  void initialization() async {
+    try {
+      HttpRepository httpRepository = HttpRepositroyImpl();
+      CacheUtils cacheUtils = CacheUtils(GetStorage());
+      Response? flagResponse = await httpRepository.flagApi();
+      if (flagResponse == null) {
+        return;
+      }
+      flagModel.value = FlagModel.fromJson(flagResponse.body);
+    } catch (e) {
+      Get.snackbar(
+        'Initialization'.tr,
+        "Something is wrong".tr,
+        icon: const Icon(Icons.warning, color: AppColor.globalColor),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: Colors.white,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: AppColor.globalColor,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+      e.printError();
+    }
   }
-
-
 }

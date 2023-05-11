@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../shared/components/constants/style/color.dart';
@@ -15,7 +16,6 @@ class CommitteesWebView extends StatefulWidget {
 class _CommitteesWebViewState extends State<CommitteesWebView> {
   int position = 1;
   int index = 0;
-  // MoreItemModel more = MoreItemModel();
 
   @override
   void initState() {
@@ -28,12 +28,14 @@ class _CommitteesWebViewState extends State<CommitteesWebView> {
     BuildContext context,
   ) {
     return Scaffold(
-        // appBar: AppBar(
-        //   centerTitle: true,
-        //   title: Text(
-        //     'more.text',
-        //   ),
-        // ),
+        appBar: AppBar(
+          backgroundColor: AppColor.globalColor,
+
+          centerTitle: true,
+          title: Text(
+            'Committees'.tr,
+          ),
+        ),
         body: SafeArea(
       child: IndexedStack(index: position, children: <Widget>[
         WebView(

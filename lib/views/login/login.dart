@@ -1,5 +1,6 @@
 import 'package:adobe/shared/components/button/elevated_button.dart';
 import 'package:adobe/shared/components/gap/gap.dart';
+import 'package:adobe/shared/widgets/base_widget/base_widget.dart';
 import 'package:adobe/views/login/controller/login_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
@@ -48,11 +49,15 @@ class LoginPage extends GetWidget<LoginController> {
                       ),
                     ],
                     options: CarouselOptions(
-                      autoPlayCurve: Curves.fastOutSlowIn,
                       autoPlay: true,
-                      autoPlayAnimationDuration: const Duration(
-                        microseconds: 1000,
-                      ),
+                      autoPlayCurve: Curves.fastOutSlowIn,
+                      enableInfiniteScroll: true,
+                      autoPlayAnimationDuration:
+                          const Duration(milliseconds: 800),
+                      viewportFraction: 0.8,
+                      aspectRatio: 16 / 9,
+                      enlargeCenterPage: true,
+                      height: 190,
                     ),
                   ),
                 ),
@@ -171,7 +176,7 @@ class LoginPage extends GetWidget<LoginController> {
                     backgroundColor: Colors.green,
                     onPressed: () {
                       if (_formKey.currentState!.validate()) {
-                        controller.logIn();
+                        Get.offAll(() => const BaseWidget());
                       }
                     },
                     shape: RoundedRectangleBorder(

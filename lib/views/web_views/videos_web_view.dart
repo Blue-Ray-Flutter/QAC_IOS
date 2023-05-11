@@ -15,7 +15,6 @@ class VideosWebView extends StatefulWidget {
 class _VideosWebViewState extends State<VideosWebView> {
   int position = 1;
   int index = 0;
-  // MoreItemModel more = MoreItemModel();
 
   @override
   void initState() {
@@ -28,36 +27,37 @@ class _VideosWebViewState extends State<VideosWebView> {
     BuildContext context,
   ) {
     return Scaffold(
-        // appBar: AppBar(
-        //   centerTitle: true,
-        //   title: Text(
-        //     'more.text',
-        //   ),
-        // ),
-        body: SafeArea(
-      child: IndexedStack(index: position, children: <Widget>[
-        WebView(
-          initialUrl: 'https://www.qac.jo/ar/media-center/videos',
-          javascriptMode: JavascriptMode.unrestricted,
-          onPageStarted: (value) {
-            setState(() {
-              position = 1;
-            });
-          },
-          onPageFinished: (value) {
-            setState(() {
-              position = 0;
-            });
-          },
-        ),
-        Container(
-          child: const Center(
-            child: CircularProgressIndicator(
-              color: AppColor.darkRedBanner,
-            ),
+        appBar: AppBar(
+          backgroundColor: AppColor.globalColor,
+          centerTitle: true,
+          title: const Text(
+            'Videos',
           ),
         ),
-      ]),
-    ));
+        body: SafeArea(
+          child: IndexedStack(index: position, children: <Widget>[
+            WebView(
+              initialUrl: 'https://www.qac.jo/ar/media-center/videos',
+              javascriptMode: JavascriptMode.unrestricted,
+              onPageStarted: (value) {
+                setState(() {
+                  position = 1;
+                });
+              },
+              onPageFinished: (value) {
+                setState(() {
+                  position = 0;
+                });
+              },
+            ),
+            Container(
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: AppColor.darkRedBanner,
+                ),
+              ),
+            ),
+          ]),
+        ));
   }
 }

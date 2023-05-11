@@ -20,6 +20,9 @@ class ContactUs extends GetWidget<ContactUsController> {
     return Form(
         key: _formKey,
         child: ListView(
+          padding: const EdgeInsets.symmetric(
+            vertical: 20,
+          ),
           physics: const BouncingScrollPhysics(),
           children: [
             TextFormField(

@@ -1,4 +1,3 @@
-import 'package:adobe/views/add/add.dart';
 import 'package:adobe/views/announcment/announcment.dart';
 import 'package:adobe/views/contact_us/contact_us.dart';
 import 'package:adobe/views/main_page/main_page.dart';
@@ -29,12 +28,6 @@ enum NavBarItem {
 }
 
 List navScreens = <BottomNavItemModel>[
-  BottomNavItemModel(
-    name: 'Add',
-    icon: Icons.add_circle_outline,
-    navBarItem: NavBarItem.add,
-    widget: const Add(),
-  ),
   BottomNavItemModel(
     name: 'Announcement',
     icon: Icons.campaign_outlined,

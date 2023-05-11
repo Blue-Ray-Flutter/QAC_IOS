@@ -1,4 +1,5 @@
 import 'package:get/get_connect.dart';
+
 abstract class HttpRepository {
   Future<Response?> login({
     required String email,
@@ -6,4 +7,6 @@ abstract class HttpRepository {
     required String lang,
     required String providerStatus,
   });
+
+  Future<Response?> flagApi();
 }

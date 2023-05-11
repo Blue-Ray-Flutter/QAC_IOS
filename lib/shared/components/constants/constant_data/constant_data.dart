@@ -1,5 +1,5 @@
-import 'package:adobe/views/web_views/Audibles_web_view.dart';
 import 'package:adobe/views/web_views/about_web_view.dart';
+import 'package:adobe/views/web_views/audibles_web_view.dart';
 import 'package:adobe/views/web_views/committees_web_view.dart';
 import 'package:adobe/views/web_views/media_center.dart';
 import 'package:adobe/views/web_views/mission_web_view.dart';
@@ -13,6 +13,9 @@ import 'package:get/get.dart';
 import '../../../../res.dart';
 import '../../../../views/more_item/model/more_item_model.dart';
 import '../style/color.dart';
+
+String appId = "acea0bfc-f639-4fa3-9de4-ad22d617b864";
+int indexNav = 1;
 
 List<MoreItemModel> moreItemList = [
   MoreItemModel(
@@ -32,7 +35,7 @@ List<MoreItemModel> moreItemList = [
       Get.to(() => UtilitiesWebView());
     },
     color: AppColor.purpleBanner,
-    text: ' Our Utilities',
+    text: 'Our Utilities',
     height: 300,
     width: 300,
   ),
@@ -42,7 +45,7 @@ List<MoreItemModel> moreItemList = [
       Get.to(() => VisionWebView());
     },
     color: AppColor.orangeBanner,
-    text: ' Our Vision',
+    text: 'Our Vision',
     height: 250,
     width: 250,
   ),
@@ -52,7 +55,7 @@ List<MoreItemModel> moreItemList = [
       Get.to(() => MissionWebView());
     },
     color: AppColor.greenBanner,
-    text: ' Our Mission',
+    text: 'Our Mission',
     height: 300,
     width: 300,
   ),
@@ -67,6 +70,7 @@ List<MoreItemModel> moreItemList = [
     width: 300,
   ),
 ];
+
 List<MoreItemModel> mediaCenterList = [
   MoreItemModel(
     svg: Res.printable,
@@ -82,7 +86,7 @@ List<MoreItemModel> mediaCenterList = [
   MoreItemModel(
     svg: Res.news,
     onPressed: () {
-      Get.to(() => NewsWebView());
+      Get.to(() => const NewsWebView());
     },
     color: AppColor.purpleBanner,
     text: 'News',
@@ -110,6 +114,3 @@ List<MoreItemModel> mediaCenterList = [
     width: 300,
   ),
 ];
-
-int indexNav = 0;
-String AppId = "acea0bfc-f639-4fa3-9de4-ad22d617b864";

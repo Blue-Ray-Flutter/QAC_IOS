@@ -13,6 +13,9 @@ class Announcement extends StatelessWidget {
     return ScrollConfiguration(
       behavior: MyBehavior(),
       child: ListView.builder(
+        padding: const EdgeInsets.symmetric(
+          vertical: 20,
+        ),
         itemBuilder: (BuildContext context, int index) {
           return ClickableCard(
             onPressed: mediaCenterList[index].onPressed,
