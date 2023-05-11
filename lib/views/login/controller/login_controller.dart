@@ -12,6 +12,7 @@ class LoginController extends GetxController {
   final CacheUtils cacheUtils;
 
   LoginController({required this.httpRepository, required this.cacheUtils});
+  final formKey = GlobalKey<FormState>();
   Rx<LoginModel?> loginModel = Rx<LoginModel?>(null);
   Rx<IconData> ico = Icons.visibility_outlined.obs;
   RxBool obscureText = true.obs;
