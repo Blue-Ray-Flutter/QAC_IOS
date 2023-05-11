@@ -54,53 +54,53 @@ class LoginModel {
 }
 
 class UserData {
-  int id;
-  String name;
-  String userName;
-  String email;
-  dynamic emailVerifiedAt;
-  String phone;
-  dynamic providerId;
-  dynamic provider;
-  String countryCode;
-  String addressEn;
-  String addressAr;
-  String latitude;
-  String longitude;
-  String userType;
-  dynamic profilePhotoUrl;
-  String status;
-  String storeType;
-  String storeNameEn;
-  String storeNameAr;
-  dynamic phoneTwo;
-  dynamic fax;
-  dynamic website;
-  dynamic workHours;
-  String storeWorkStatus;
-  dynamic aboutStoreEn;
-  dynamic aboutStoreAr;
-  String storeDescriptionEn;
-  String storeDescriptionAr;
-  String storeServiceEn;
-  String storeServiceAr;
-  String storeStatus;
-  dynamic storeLocation;
-  String storeCity;
-  String storeRegion;
-  String storeStreet;
-  String buildingName;
-  int buildingNumber;
-  int mailbox;
-  int postalCode;
-  String showInHomePage;
-  String freeDeliveryStatus;
-  dynamic authenticatedStatus;
-  String storeReview;
-  dynamic storeId;
-  dynamic deletedAt;
-  DateTime createdAt;
-  DateTime updatedAt;
+  int? id;
+  String? name;
+  String ?userName;
+  String? email;
+  DateTime? emailVerifiedAt;
+  String? phone;
+  int? providerId;
+  String? provider;
+  String? countryCode;
+  String? addressEn;
+  String? addressAr;
+  String? latitude;
+  String? longitude;
+  String? userType;
+  String? profilePhotoUrl;
+  String? status;
+  String? storeType;
+  String? storeNameEn;
+  String? storeNameAr;
+  String? phoneTwo;
+  String? fax;
+  String? website;
+  String? workHours;
+  String? storeWorkStatus;
+  String? aboutStoreEn;
+  String? aboutStoreAr;
+  String ?storeDescriptionEn;
+  String? storeDescriptionAr;
+  String ?storeServiceEn;
+  String ?storeServiceAr;
+  String ?storeStatus;
+  String? storeLocation;
+  String? storeCity;
+  String ?storeRegion;
+  String ?storeStreet;
+  String ?buildingName;
+  int ?buildingNumber;
+  int ?mailbox;
+  int ?postalCode;
+  String ?showInHomePage;
+  String ?freeDeliveryStatus;
+  String? authenticatedStatus;
+  String ?storeReview;
+  int ?storeId;
+  DateTime ?deletedAt;
+  DateTime? createdAt;
+  DateTime ?updatedAt;
 
   UserData({
     required this.id,
@@ -248,7 +248,7 @@ class UserData {
     "store_review": storeReview,
     "store_id": storeId,
     "deleted_at": deletedAt,
-    "created_at": createdAt.toIso8601String(),
-    "updated_at": updatedAt.toIso8601String(),
+    "created_at": createdAt?.toIso8601String(),
+    "updated_at": updatedAt?.toIso8601String(),
   };
 }

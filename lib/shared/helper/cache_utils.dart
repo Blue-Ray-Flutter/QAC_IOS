@@ -33,7 +33,7 @@ String? getUserName() {
   return _storage.read(_userNameKey);
 }
 
-Future<void> sginup(
+Future<void> register(
 {
   required String name,
   required String token,
@@ -51,7 +51,7 @@ Future<void> sginup(
 
 }
 
-Future<void> login({
+Future<void> logIn({
   required String email,
   required String token,
 

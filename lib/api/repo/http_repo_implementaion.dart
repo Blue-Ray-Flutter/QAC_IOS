@@ -28,7 +28,7 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
     });
     var response = await post(UrlApi.loginUrl, fromData);
     if (response.isOk) {
-      Get.to(() => const BaseWidget());
+      Get.offAll(() => const BaseWidget());
       return response;
     } else if (response.status.hasError) {
       Get.snackbar(

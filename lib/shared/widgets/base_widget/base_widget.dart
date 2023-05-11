@@ -3,7 +3,7 @@ import 'package:adobe/shared/components/widget/size_config.dart';
 import 'package:flutter/material.dart';
 
 import '../../../main.dart';
-import '../../components/button/bottom_as_a_body.dart';
+import '../../components/button/bottom_nav_item.dart';
 import '../../components/constants/constant_data/constant_data.dart';
 import '../../components/nav_screen/nav_screen_model/nav_screen_model.dart';
 
@@ -65,7 +65,7 @@ class _BaseWidgetState extends State<BaseWidget> {
               navScreens[indexNav].navBarItem == NavBarItem.home
                   ? Container()
                   : SizedBox(
-                      height: 60,
+                      height: SizeConfig.screenHeight * 0.065,
                       child: Center(
                         child: AppBar(
                           centerTitle: true,

@@ -1,4 +1,4 @@
-import 'package:adobe/shared/components/button/elevated_button.dart';
+import 'package:adobe/shared/components/button/default_elevated_button.dart';
 import 'package:adobe/shared/components/constants/style/color.dart';
 import 'package:adobe/shared/components/gap/gap.dart';
 import 'package:adobe/views/register/controller/register_controller.dart';
@@ -22,7 +22,7 @@ class RegisterPage extends GetWidget<RegisterController> {
         padding: const EdgeInsets.only(left: 20, right: 20),
         child: Form(
           child: ListView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             padding: const EdgeInsets.only(
               top: 20,
               bottom: 40,

@@ -3,7 +3,9 @@ import 'package:adobe/views/contact_us/contact_us.dart';
 import 'package:adobe/views/main_page/main_page.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../views/more_item/more_item.dart';
+import '../../../../views/more/more.dart';
+
+
 
 class BottomNavItemModel {
   NavBarItem navBarItem;
@@ -50,6 +52,6 @@ List navScreens = <BottomNavItemModel>[
     name: 'About Us',
     icon: Icons.import_contacts_outlined,
     navBarItem: NavBarItem.aboutUs,
-    widget: const AboutUs(),
+    widget: const MoreItems(),
   ),
 ];

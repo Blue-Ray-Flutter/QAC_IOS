@@ -25,11 +25,12 @@ class ClickableCard extends StatelessWidget {
     return Card(
       color: color,
       child: ElevatedButton(
+
         style: ElevatedButton.styleFrom(
           elevation: 0,
           backgroundColor: color,
           shape:
-              RoundedRectangleBorder(borderRadius: BorderRadius.circular(15)),
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(5)),
         ),
         onPressed: onPressed,
         child: Padding(

@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../shared/components/constants/style/color.dart';
+import '../../../../shared/components/constants/style/color.dart';
 
-class NewsWebView extends StatefulWidget {
-  const NewsWebView({Key? key}) : super(key: key);
+class MediaCenterWebView extends StatefulWidget {
+  MediaCenterWebView({Key? key}) : super(key: key);
 
   @override
-  _NewsWebViewState createState() => _NewsWebViewState();
+  _MediaCenterWebViewState createState() => _MediaCenterWebViewState();
 }
 
-class _NewsWebViewState extends State<NewsWebView> {
+class _MediaCenterWebViewState extends State<MediaCenterWebView> {
   int position = 1;
   int index = 0;
 
@@ -32,13 +32,13 @@ class _NewsWebViewState extends State<NewsWebView> {
           backgroundColor: AppColor.globalColor,
           centerTitle: true,
           title: Text(
-            'News'.tr,
+            'Printed Media'.tr,
           ),
         ),
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/media-center/news',
+              initialUrl: 'https://www.qac.jo/ar/media-center',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {
@@ -51,9 +51,11 @@ class _NewsWebViewState extends State<NewsWebView> {
                 });
               },
             ),
-            const Center(
-              child: CircularProgressIndicator(
-                color: AppColor.darkRedBanner,
+            Container(
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: AppColor.darkRedBanner,
+                ),
               ),
             ),
           ]),

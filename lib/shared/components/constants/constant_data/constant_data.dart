@@ -1,17 +1,18 @@
-import 'package:adobe/views/web_views/about_web_view.dart';
-import 'package:adobe/views/web_views/audibles_web_view.dart';
-import 'package:adobe/views/web_views/committees_web_view.dart';
-import 'package:adobe/views/web_views/media_center.dart';
-import 'package:adobe/views/web_views/mission_web_view.dart';
-import 'package:adobe/views/web_views/news_web_view.dart';
-import 'package:adobe/views/web_views/utilities_web_view.dart';
-import 'package:adobe/views/web_views/videos_web_view.dart';
-import 'package:adobe/views/web_views/vision_web_view.dart';
+import 'package:adobe/views/announcment/web_views/audibles_web_view.dart';
+import 'package:adobe/views/announcment/web_views/media_center.dart';
+import 'package:adobe/views/announcment/web_views/news_web_view.dart';
+import 'package:adobe/views/announcment/web_views/videos_web_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../res.dart';
-import '../../../../views/more_item/model/more_item_model.dart';
+
+import '../../../../views/more/model/more_item_model.dart';
+import '../../../../views/more/web_views/about_web_view.dart';
+import '../../../../views/more/web_views/committees_web_view.dart';
+import '../../../../views/more/web_views/mission_web_view.dart';
+import '../../../../views/more/web_views/utilities_web_view.dart';
+import '../../../../views/more/web_views/vision_web_view.dart';
 import '../style/color.dart';
 
 String appId = "acea0bfc-f639-4fa3-9de4-ad22d617b864";

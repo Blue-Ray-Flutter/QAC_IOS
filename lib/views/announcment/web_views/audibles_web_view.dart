@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../shared/components/constants/style/color.dart';
+import '../../../../shared/components/constants/style/color.dart';
 
 class AudiblesWebView extends StatefulWidget {
   AudiblesWebView({Key? key}) : super(key: key);

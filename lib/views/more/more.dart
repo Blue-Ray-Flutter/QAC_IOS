@@ -1,11 +1,11 @@
-import 'package:adobe/shared/components/card_view_container/card_view.dart';
+import 'package:adobe/shared/components/card_view_container/clickable_card_view.dart';
 import 'package:adobe/shared/components/constants/constant_data/constant_data.dart';
 import 'package:flutter/material.dart';
 
 import '../../main.dart';
 
-class AboutUs extends StatelessWidget {
-  const AboutUs({Key? key}) : super(key: key);
+class MoreItems extends StatelessWidget {
+  const MoreItems({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {

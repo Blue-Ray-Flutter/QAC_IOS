@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get_state_manager/get_state_manager.dart';
 
 class DefaultElevatedButton extends StatelessWidget {
   final Widget child;
@@ -27,10 +26,7 @@ class DefaultElevatedButton extends StatelessWidget {
       ),
       onPressed: onPressed,
       child: Ink(
-        // decoration: ShapeDecoration(
-        //   color: backgroundColor ?? Colors.white,
-        //   shape: const RoundedRectangleBorder(),
-        // ),
+
         child: InkWell(
           onTap: onPressed,
           splashColor: overlayColor ?? Colors.white10,

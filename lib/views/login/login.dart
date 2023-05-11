@@ -1,4 +1,4 @@
-import 'package:adobe/shared/components/button/elevated_button.dart';
+import 'package:adobe/shared/components/button/default_elevated_button.dart';
 import 'package:adobe/shared/components/gap/gap.dart';
 import 'package:adobe/shared/widgets/base_widget/base_widget.dart';
 import 'package:adobe/views/login/controller/login_controller.dart';
@@ -11,8 +11,7 @@ import '../../res.dart';
 import '../../shared/components/constants/style/color.dart';
 import '../register/register.dart';
 
-bool _isPasswordVisible = false;
-final _formKey = GlobalKey<FormState>();
+
 
 class LoginPage extends GetWidget<LoginController> {
   const LoginPage({Key? key}) : super(key: key);
@@ -24,7 +23,7 @@ class LoginPage extends GetWidget<LoginController> {
       body: SingleChildScrollView(
         physics: const BouncingScrollPhysics(),
         child: Form(
-          key: _formKey,
+          key: controller.formKey,
           child: Padding(
             padding: const EdgeInsets.all(20.0),
             child: Column(
@@ -175,7 +174,7 @@ class LoginPage extends GetWidget<LoginController> {
                   child: DefaultElevatedButton(
                     backgroundColor: Colors.green,
                     onPressed: () {
-                      if (_formKey.currentState!.validate()) {
+                      if (controller.formKey.currentState!.validate()) {
                         Get.offAll(() => const BaseWidget());
                       }
                     },
