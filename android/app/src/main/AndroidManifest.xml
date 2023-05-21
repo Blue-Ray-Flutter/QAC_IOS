@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.adobe">
+    package="com.bueray.qac">
     <uses-permission android:name="android.permission.INTERNET" />
    <application
         android:label="QAC"

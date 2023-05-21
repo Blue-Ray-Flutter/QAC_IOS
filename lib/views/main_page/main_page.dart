@@ -55,7 +55,7 @@ class MainPage extends GetWidget<MainPageController> {
                             style: TextStyle(fontSize: 15, color: Colors.pink),
                           ),
                           Text(
-                            ' Minor daily actions can make a big difference',
+                            'Minor daily actions can make a big difference',
                             style: TextStyle(fontSize: 15, color: Colors.black),
                           ),
                         ],

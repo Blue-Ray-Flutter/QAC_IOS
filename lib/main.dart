@@ -1,5 +1,6 @@
 import 'package:adobe/res.dart';
 import 'package:adobe/shared/components/constants/constant_data/constant_data.dart';
+import 'package:adobe/shared/translation/app_translation.dart';
 import 'package:adobe/shared/widgets/base_widget/base_widget.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
@@ -36,6 +37,9 @@ class _MyAppState extends State<MyApp> {
     ]);
     return GetMaterialApp(
         debugShowCheckedModeBanner: false,
+        translations: AppTranslation(),
+        locale: const Locale('ar'),
+        fallbackLocale: const Locale('ar'),
         theme: ThemeData(),
         initialBinding: AppBindings(),
         home: AnimatedSplashScreen(
