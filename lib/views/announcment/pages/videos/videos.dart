@@ -3,7 +3,7 @@ import 'dart:io';
 import 'package:flutter/material.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../../shared/components/constants/style/color.dart';
+import '../../../../../shared/components/constants/style/color.dart';
 
 class VideosWebView extends StatefulWidget {
   VideosWebView({Key? key}) : super(key: key);

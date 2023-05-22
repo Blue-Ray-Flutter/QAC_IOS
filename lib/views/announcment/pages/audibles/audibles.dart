@@ -4,18 +4,19 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../shared/components/constants/style/color.dart';
+import '../../../../../shared/components/constants/style/color.dart';
 
-class MissionWebView extends StatefulWidget {
-  const MissionWebView({Key? key}) : super(key: key);
+class AudiblesWebView extends StatefulWidget {
+  AudiblesWebView({Key? key}) : super(key: key);
 
   @override
-  _MissionWebViewState createState() => _MissionWebViewState();
+  _AudiblesWebViewState createState() => _AudiblesWebViewState();
 }
 
-class _MissionWebViewState extends State<MissionWebView> {
+class _AudiblesWebViewState extends State<AudiblesWebView> {
   int position = 1;
   int index = 0;
+  // MoreItemModel more = MoreItemModel();
 
   @override
   void initState() {
@@ -32,13 +33,13 @@ class _MissionWebViewState extends State<MissionWebView> {
           backgroundColor: AppColor.globalColor,
           centerTitle: true,
           title: Text(
-            'Our Mission'.tr,
+            'Audio'.tr,
           ),
         ),
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/node/142',
+              initialUrl: 'https://www.qac.jo/ar/audio',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {

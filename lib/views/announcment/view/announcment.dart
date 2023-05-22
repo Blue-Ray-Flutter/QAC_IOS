@@ -2,7 +2,7 @@ import 'package:adobe/shared/components/card_view_container/clickable_card_view.
 import 'package:adobe/shared/components/constants/constant_data/constant_data.dart';
 import 'package:flutter/material.dart';
 
-import '../../main.dart';
+import '../../../main.dart';
 
 class Announcement extends StatelessWidget {
   const Announcement({Key? key}) : super(key: key);

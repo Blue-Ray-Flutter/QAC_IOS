@@ -56,7 +56,7 @@ class _BaseWidgetState extends State<BaseWidget> {
                 padding: navScreens[indexNav].navBarItem == NavBarItem.home
                     ? const EdgeInsetsDirectional.only(top: 0)
                     : const EdgeInsetsDirectional.only(
-                        top: 60,
+                        top: 40,
                         start: 30,
                         end: 30,
                       ),

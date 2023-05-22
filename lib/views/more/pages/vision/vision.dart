@@ -4,19 +4,18 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../shared/components/constants/style/color.dart';
+import '../../../../shared/components/constants/style/color.dart';
 
-class AboutUsWebView extends StatefulWidget {
-  AboutUsWebView({Key? key}) : super(key: key);
+class VisionWebView extends StatefulWidget {
+  VisionWebView({Key? key}) : super(key: key);
 
   @override
-  _AboutUsWebViewState createState() => _AboutUsWebViewState();
+  _VisionWebViewState createState() => _VisionWebViewState();
 }
 
-class _AboutUsWebViewState extends State<AboutUsWebView> {
+class _VisionWebViewState extends State<VisionWebView> {
   int position = 1;
   int index = 0;
-  // MoreItemModel more = MoreItemModel();
 
   @override
   void initState() {
@@ -33,13 +32,13 @@ class _AboutUsWebViewState extends State<AboutUsWebView> {
           backgroundColor: AppColor.globalColor,
           centerTitle: true,
           title: Text(
-            'About us'.tr,
+            'Our Vision'.tr,
           ),
         ),
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/about-us',
+              initialUrl: 'https://www.qac.jo/ar/node/141',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {

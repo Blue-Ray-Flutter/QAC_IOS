@@ -1,11 +1,10 @@
-import 'package:adobe/views/announcment/announcment.dart';
-import 'package:adobe/views/contact_us/contact_us.dart';
-import 'package:adobe/views/main_page/main_page.dart';
+import 'package:adobe/views/announcment/view/announcment.dart';
+import 'package:adobe/views/contact_us/view/contact_us.dart';
+import 'package:adobe/views/main_page/view/main_page.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
-import '../../../../views/more/more.dart';
-
-
+import '../../../../views/more/view/more.dart';
 
 class BottomNavItemModel {
   NavBarItem navBarItem;
@@ -31,25 +30,25 @@ enum NavBarItem {
 
 List navScreens = <BottomNavItemModel>[
   BottomNavItemModel(
-    name: 'Announcement',
+    name: 'Announcement'.tr,
     icon: Icons.campaign_outlined,
     navBarItem: NavBarItem.announcement,
     widget: const Announcement(),
   ),
   BottomNavItemModel(
-    name: 'Home',
+    name: 'Home Page'.tr,
     icon: Icons.home_outlined,
     navBarItem: NavBarItem.home,
     widget: const MainPage(),
   ),
   BottomNavItemModel(
-    name: 'Contact Us',
+    name: 'Contact Us'.tr,
     icon: Icons.email_outlined,
     navBarItem: NavBarItem.contactus,
     widget: const ContactUs(),
   ),
   BottomNavItemModel(
-    name: 'About Us',
+    name: 'About Us'.tr,
     icon: Icons.import_contacts_outlined,
     navBarItem: NavBarItem.aboutUs,
     widget: const MoreItems(),

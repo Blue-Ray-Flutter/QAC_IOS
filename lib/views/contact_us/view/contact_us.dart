@@ -3,8 +3,8 @@ import 'package:adobe/views/contact_us/controller/contact_us_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-import '../../shared/components/button/default_elevated_button.dart';
-import '../../shared/components/constants/style/color.dart';
+import '../../../shared/components/button/default_elevated_button.dart';
+import '../../../shared/components/constants/style/color.dart';
 
 final _formKey = GlobalKey<FormState>();
 
@@ -27,7 +27,7 @@ class ContactUs extends GetWidget<ContactUsController> {
           children: [
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'Full Name',
+                hintText: 'Full Name'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
@@ -55,7 +55,7 @@ class ContactUs extends GetWidget<ContactUsController> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'School or University Name',
+                hintText: 'School or University Name'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
@@ -85,7 +85,7 @@ class ContactUs extends GetWidget<ContactUsController> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'City or Village Name',
+                hintText: 'City or Village Name'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
@@ -115,7 +115,7 @@ class ContactUs extends GetWidget<ContactUsController> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'Phone Number',
+                hintText: 'Phone Number'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
@@ -142,7 +142,7 @@ class ContactUs extends GetWidget<ContactUsController> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'Email Address',
+                hintText: 'Email Address'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(
@@ -172,7 +172,7 @@ class ContactUs extends GetWidget<ContactUsController> {
             ),
             TextFormField(
               decoration: InputDecoration(
-                hintText: 'Your Question',
+                hintText: 'Your Question'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),
                 filled: true,
                 border: const OutlineInputBorder(

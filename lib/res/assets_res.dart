@@ -4,5 +4,5 @@
 // ignore_for_file: lines_longer_than_80_chars
 class AssetsRes {
   static const String PLUGIN_NAME = 'adobe';
-  static const String PLUGIN_VERSION = '1.0.0+5';
+  static const String PLUGIN_VERSION = '1.0.0+6';
 }

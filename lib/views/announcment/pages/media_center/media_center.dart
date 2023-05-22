@@ -4,16 +4,16 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../shared/components/constants/style/color.dart';
+import '../../../../../shared/components/constants/style/color.dart';
 
-class VisionWebView extends StatefulWidget {
-  VisionWebView({Key? key}) : super(key: key);
+class MediaCenterWebView extends StatefulWidget {
+  MediaCenterWebView({Key? key}) : super(key: key);
 
   @override
-  _VisionWebViewState createState() => _VisionWebViewState();
+  _MediaCenterWebViewState createState() => _MediaCenterWebViewState();
 }
 
-class _VisionWebViewState extends State<VisionWebView> {
+class _MediaCenterWebViewState extends State<MediaCenterWebView> {
   int position = 1;
   int index = 0;
 
@@ -32,13 +32,13 @@ class _VisionWebViewState extends State<VisionWebView> {
           backgroundColor: AppColor.globalColor,
           centerTitle: true,
           title: Text(
-            'Our Vision'.tr,
+            'Printed Media'.tr,
           ),
         ),
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/node/141',
+              initialUrl: 'https://www.qac.jo/ar/media-center',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {

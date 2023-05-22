@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
-import '../../../shared/components/constants/style/color.dart';
+import '../../../../shared/components/constants/style/color.dart';
 
 class UtilitiesWebView extends StatefulWidget {
   UtilitiesWebView({Key? key}) : super(key: key);
@@ -31,36 +31,35 @@ class _UtilitiesWebViewState extends State<UtilitiesWebView> {
     return Scaffold(
         appBar: AppBar(
           backgroundColor: AppColor.globalColor,
-
           centerTitle: true,
-          title:  Text(
+          title: Text(
             'Our Utilities'.tr,
           ),
         ),
         body: SafeArea(
-      child: IndexedStack(index: position, children: <Widget>[
-        WebView(
-          initialUrl: 'https://www.qac.jo/ar/node/143',
-          javascriptMode: JavascriptMode.unrestricted,
-          onPageStarted: (value) {
-            setState(() {
-              position = 1;
-            });
-          },
-          onPageFinished: (value) {
-            setState(() {
-              position = 0;
-            });
-          },
-        ),
-        Container(
-          child: const Center(
-            child: CircularProgressIndicator(
-              color: AppColor.darkRedBanner,
+          child: IndexedStack(index: position, children: <Widget>[
+            WebView(
+              initialUrl: 'https://www.qac.jo/ar/node/143',
+              javascriptMode: JavascriptMode.unrestricted,
+              onPageStarted: (value) {
+                setState(() {
+                  position = 1;
+                });
+              },
+              onPageFinished: (value) {
+                setState(() {
+                  position = 0;
+                });
+              },
             ),
-          ),
-        ),
-      ]),
-    ));
+            Container(
+              child: const Center(
+                child: CircularProgressIndicator(
+                  color: AppColor.darkRedBanner,
+                ),
+              ),
+            ),
+          ]),
+        ));
   }
 }
