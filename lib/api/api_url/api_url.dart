@@ -1,7 +1,5 @@
 class UrlApi {
-  static const baseUrl = "https://al-bausalah.com/api/";
-  static const loginUrl = "${baseUrl}customer/login";
-  static const logoutUrl = "${baseUrl}customer/logout";
-  static const flagUrl =
-      "https://queen-alia-competitions-default-rtdb.firebaseio.com/.json";
+  static const baseUrl = "https://www.qac.jo/";
+  static const flagUrl = "${baseUrl}competitionTime";
+  static const contactUrl = "${baseUrl}contactWebForm";
 }

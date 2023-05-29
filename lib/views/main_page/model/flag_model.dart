@@ -4,13 +4,13 @@ class FlagModel {
   });
 
   FlagModel.fromJson(dynamic json) {
-    value = json['value'];
+    value = json['flag'];
   }
   int? value;
 
   Map<String, dynamic> toJson() {
     final map = <String, dynamic>{};
-    map['value'] = value;
+    map['flag'] = value;
     return map;
   }
 }
