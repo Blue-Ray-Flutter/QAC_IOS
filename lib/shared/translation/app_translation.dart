@@ -23,6 +23,7 @@ class AppTranslation extends Translations {
           'Our Mission': 'مهمتنا',
           'Committees': 'اللجان',
           'Videos Gallery': 'معرض الفيديو',
+          'Audio': 'الصوتيات',
           'Audibles': 'الصوتيات',
           'Awareness Campaign to restore the Ecosystem':
               'حملة توعية لاستعادة النظام البيئي',

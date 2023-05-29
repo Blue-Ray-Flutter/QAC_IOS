@@ -33,7 +33,7 @@ class _AboutUsWebViewState extends State<AboutUsWebView> {
           backgroundColor: AppColor.globalColor,
           centerTitle: true,
           title: Text(
-            'About us'.tr,
+            'About Us'.tr,
           ),
         ),
         body: SafeArea(

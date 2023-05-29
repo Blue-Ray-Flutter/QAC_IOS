@@ -205,9 +205,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               width: double.infinity,
               height: 60,
               child: DefaultElevatedButton(
-                onPressed: () {
-                  // Get.to(() => const BottomAsABody());
-                },
+                onPressed: () {},
                 shape: RoundedRectangleBorder(
                   side: const BorderSide(color: Colors.pink),
                   borderRadius: BorderRadius.circular(10),
