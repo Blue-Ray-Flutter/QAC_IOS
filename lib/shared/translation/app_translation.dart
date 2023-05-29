@@ -27,7 +27,14 @@ class AppTranslation extends Translations {
           'Awareness Campaign to restore the Ecosystem':
               'حملة توعية لاستعادة النظام البيئي',
           'Our small daily behavior ... has a big impact on our environment':
-              'سلوكنا اليومي الصغير ... اثره في بيئتنا كبير'
+              'سلوكنا اليومي الصغير ... اثره في بيئتنا كبير',
+          'Full name is required': ''
+              'الاسم مطلوب',
+          'School or university name is required':
+              'اسم المدرسة او الجامعة مطلوب',
+          'Phone number is required': 'رقم الهاتف مطلوب',
+          'Email address is required': 'البريد الاكتروني مطلوب',
+          'Your question is required': 'السؤال مطلوب',
         },
         'en': {}
       };

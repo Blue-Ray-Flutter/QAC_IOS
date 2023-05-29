@@ -84,7 +84,7 @@ class MainPage extends GetWidget<MainPageController> {
                         SizedBox(
                           height: SizeConfig.screenHeight * 0.2,
                           width: SizeConfig.screenWidth,
-                          child: controller.flagModel.value!.value == 1
+                          child: controller.flagModel.value!.value == 0
                               ? Container()
                               : Stack(
                                   alignment: AlignmentDirectional.center,
