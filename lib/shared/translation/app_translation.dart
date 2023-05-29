@@ -16,6 +16,8 @@ class AppTranslation extends Translations {
           'Printed Media': 'المطبوعات',
           'News': 'الاخبار',
           'About Us': 'من نحن',
+          'Videos': 'الفيديوهات',
+          'Send': 'ارسال',
           'Our Utilities': 'أدواتنا',
           'Our Vision': 'رؤيتنا',
           'Our Mission': 'مهمتنا',

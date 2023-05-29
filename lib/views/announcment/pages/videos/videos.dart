@@ -1,6 +1,7 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../../../shared/components/constants/style/color.dart';
@@ -30,8 +31,8 @@ class _VideosWebViewState extends State<VideosWebView> {
         appBar: AppBar(
           backgroundColor: AppColor.globalColor,
           centerTitle: true,
-          title: const Text(
-            'Videos',
+          title: Text(
+            'Videos'.tr,
           ),
         ),
         body: SafeArea(

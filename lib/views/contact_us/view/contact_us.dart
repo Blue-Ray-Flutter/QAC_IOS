@@ -213,9 +213,9 @@ class ContactUs extends GetWidget<ContactUsController> {
                   borderRadius: BorderRadius.circular(10),
                 ),
                 backgroundColor: Colors.pink,
-                child: const Text(
-                  'Send',
-                  style: TextStyle(
+                child: Text(
+                  'Send'.tr,
+                  style: const TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.bold,
                     color: AppColor.globalInvertedColor,
