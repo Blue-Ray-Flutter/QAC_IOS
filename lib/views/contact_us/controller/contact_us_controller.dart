@@ -38,7 +38,7 @@ class ContactUsController extends GetxController {
     } catch (e) {
       Get.snackbar(
         'Contact Us'.tr,
-        'Something is wrong',
+        'Something is wrong'.tr,
         icon: const Icon(
           Icons.warning,
           color: Colors.white,

@@ -25,6 +25,8 @@ class AppTranslation extends Translations {
           'Videos Gallery': 'معرض الفيديو',
           'Audio': 'الصوتيات',
           'Audibles': 'الصوتيات',
+          'Enter required fields': 'ادخل الحقول المطلوبة',
+          'Something is wrong': 'هناك خطأ ما',
           'Awareness Campaign to restore the Ecosystem':
               'حملة توعية لاستعادة النظام البيئي',
           'Our small daily behavior ... has a big impact on our environment':

@@ -211,7 +211,7 @@ class ContactUs extends GetWidget<ContactUsController> {
                   } else {
                     Get.snackbar(
                       'Contact US'.tr,
-                      'Enter required fields',
+                      'Enter required fields'.tr,
                       icon: const Icon(
                         Icons.warning,
                         color: Colors.white,
