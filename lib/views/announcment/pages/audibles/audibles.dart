@@ -52,11 +52,9 @@ class _AudiblesWebViewState extends State<AudiblesWebView> {
                 });
               },
             ),
-            Container(
-              child: const Center(
-                child: CircularProgressIndicator(
-                  color: AppColor.darkRedBanner,
-                ),
+            const Center(
+              child: CircularProgressIndicator(
+                color: AppColor.darkRedBanner,
               ),
             ),
           ]),
