@@ -4,6 +4,7 @@ import 'package:adobe/views/main_page/controller/main_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../generated/assets.dart';
 import '../../../res.dart';
 
 class MainPage extends GetWidget<MainPageController> {
@@ -32,6 +33,34 @@ class MainPage extends GetWidget<MainPageController> {
                 child: Stack(
                   alignment: Alignment.bottomCenter,
                   children: [
+                    Stack(
+                      children: [
+                        Align(
+                          alignment: const Alignment(-0.5,-1.07),
+                          child: Container(
+                            height: SizeConfig.screenHeight * 0.15,
+                            width: SizeConfig.screenWidth * 0.3,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(Assets.imagesJouhdLogo),
+                                  fit: BoxFit.fitWidth,
+                                )),
+                          ),
+                        ),
+                        Align(
+                          alignment: const Alignment(0.6,-1.07),
+                          child: Container(
+                            height: SizeConfig.screenHeight * 0.15,
+                            width: SizeConfig.screenWidth * 0.2,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                                  image: AssetImage(Assets.imagesQacLogo),
+                                  fit: BoxFit.fitWidth,
+                                )),
+                          ),
+                        ),
+                      ],
+                    ),
                     Positioned(
                       top: -(SizeConfig.screenHeight * 0.1),
                       child: Align(
@@ -61,7 +90,7 @@ class MainPage extends GetWidget<MainPageController> {
                                     .tr,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                  fontSize: 17,
+                                  fontSize: 23,
                                   color: Colors.pink,
                                   fontWeight: FontWeight.bold,
                                 ),
@@ -74,8 +103,9 @@ class MainPage extends GetWidget<MainPageController> {
                                     .tr,
                                 textAlign: TextAlign.center,
                                 style: const TextStyle(
-                                  fontSize: 14,
+                                  fontSize: 17,
                                   color: Colors.black,
+                                  fontWeight: FontWeight.bold
                                 ),
                               ),
                             ],

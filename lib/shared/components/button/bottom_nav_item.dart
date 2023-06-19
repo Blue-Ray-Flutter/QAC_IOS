@@ -7,6 +7,7 @@ Widget buildBottomNavItem({
   required Color activeColor,
   required Color activeIconColor,
   required String name,
+  required Color selectedNameColor,
 
   // required  String label,
 }) {
@@ -37,7 +38,7 @@ Widget buildBottomNavItem({
           fontSize: 12,
           fontWeight: FontWeight.bold,
 
-          color: activeColor,
+          color: selectedNameColor,
 
         ),),
       ],

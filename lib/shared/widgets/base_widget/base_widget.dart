@@ -56,6 +56,8 @@ class _BaseWidgetState extends State<BaseWidget> {
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) => buildBottomNavItem(
                         name: navScreens[index].name,
+                          selectedNameColor: indexNav == index ? AppColor.globalColor : Colors.grey[300]!
+                          ,
                           activeIconColor:
                               indexNav == index ? Colors.white : Colors.black,
                           iconData: navScreens[index].icon,

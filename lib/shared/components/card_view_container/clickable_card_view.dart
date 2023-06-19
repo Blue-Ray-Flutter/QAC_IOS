@@ -40,13 +40,13 @@ class ClickableCard extends StatelessWidget {
               flex: 3,
               child: Container(
                   alignment: Alignment.centerLeft,
-                  child: Column(children: [
+                  child: Row(children: [
                     Text(
                       text!,
-                      textAlign: TextAlign.start,
+                      textAlign: TextAlign.end,
                       style: const TextStyle(
                         color: Colors.white,
-                        fontSize: 20,
+                        fontSize: 25,
                       ),
                     ),
                   ])),

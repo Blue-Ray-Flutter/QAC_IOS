@@ -4,6 +4,9 @@ import 'package:adobe/shared/helper/cache_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../main_page/view/main_page.dart';
+import '../view/message_delivered.dart';
+
 class ContactUsController extends GetxController {
   final HttpRepository httpRepository;
   final CacheUtils cacheUtils;
@@ -31,7 +34,10 @@ class ContactUsController extends GetxController {
         question: questionController.text,
         schoolName: schoolNameController.text,
       );
+Future.delayed(const Duration(milliseconds: 500),
 
+);
+      Get.to(()=>const MessageDelivered());
       if (contactUsResponse.value == null) {
         return null;
       }
@@ -55,5 +61,15 @@ class ContactUsController extends GetxController {
       );
       e.printError();
     }
+
+  }
+  @override
+  void dispose() {
+    emailController.dispose();
+    phoneController.dispose();
+    fullNameController.dispose();
+    schoolNameController.dispose();
+    questionController.dispose();
+    super.dispose();
   }
 }
