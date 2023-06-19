@@ -30,27 +30,29 @@ enum NavBarItem {
 
 List navScreens = <BottomNavItemModel>[
   BottomNavItemModel(
-    name: 'Announcement'.tr,
-    icon: Icons.campaign_outlined,
-    navBarItem: NavBarItem.announcement,
-    widget: const Announcement(),
-  ),
-  BottomNavItemModel(
     name: 'Home Page'.tr,
     icon: Icons.home_outlined,
     navBarItem: NavBarItem.home,
     widget: const MainPage(),
   ),
   BottomNavItemModel(
+    name: 'About Us'.tr,
+    icon: Icons.list_alt_rounded,
+    navBarItem: NavBarItem.aboutUs,
+    widget: const MoreItems(),
+  ),
+  BottomNavItemModel(
+    name: 'Announcement'.tr,
+    icon: Icons.campaign_outlined,
+    navBarItem: NavBarItem.announcement,
+    widget: const Announcement(),
+  ),
+
+  BottomNavItemModel(
     name: 'Contact Us'.tr,
     icon: Icons.email_outlined,
     navBarItem: NavBarItem.contactus,
     widget: const ContactUs(),
   ),
-  BottomNavItemModel(
-    name: 'About Us'.tr,
-    icon: Icons.import_contacts_outlined,
-    navBarItem: NavBarItem.aboutUs,
-    widget: const MoreItems(),
-  ),
+
 ];

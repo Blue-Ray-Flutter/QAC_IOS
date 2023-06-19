@@ -6,7 +6,9 @@ abstract class HttpRepository {
     required String name,
     required String schoolName,
     required String phoneNumber,
-    required String email,
+     String? email,
     required String question,
-  });
+  }
+
+  );
 }

@@ -129,6 +129,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               height: 16,
             ),
             TextFormField(
+
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Email address is required'.tr;

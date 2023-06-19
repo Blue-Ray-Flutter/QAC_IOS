@@ -44,7 +44,7 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
     required String name,
     required String schoolName,
     required String phoneNumber,
-    required String email,
+     String? email,
     required String question,
   }) async {
     final formData = FormData({

@@ -26,7 +26,7 @@ class ContactUsController extends GetxController {
     try {
       await httpRepository.contactUs(
         name: fullNameController.text,
-        email: emailController.text,
+       email: emailController.text ,
         phoneNumber: phoneController.text,
         question: questionController.text,
         schoolName: schoolNameController.text,

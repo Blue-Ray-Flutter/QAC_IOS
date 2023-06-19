@@ -20,35 +20,58 @@ class _BaseWidgetState extends State<BaseWidget> {
     SizeConfig().init(context);
     return SafeArea(
       child: Scaffold(
-          bottomNavigationBar: Container(
-            height: SizeConfig.screenHeight * 0.118,
-            decoration: BoxDecoration(
-              color: Colors.white.withOpacity(0.1),
-              borderRadius: const BorderRadius.all(Radius.circular(100)),
-            ),
-            child: Align(
-              alignment: Alignment.center,
-              child: ScrollConfiguration(
-                behavior: MyBehavior(),
-                child: ListView.builder(
-                  shrinkWrap: true,
-                  itemCount: navScreens.length,
-                  scrollDirection: Axis.horizontal,
-                  itemBuilder: (context, index) => buildBottomNavItem(
-                      activeIconColor:
-                          indexNav == index ? Colors.white : Colors.black,
-                      iconData: navScreens[index].icon,
-                      onPressed: () {
-                        setState(() {
-                          indexNav = index;
-                        });
-                      },
-                      activeColor: indexNav == index
-                          ? AppColor.globalColor
-                          : Colors.white),
+          bottomNavigationBar: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            crossAxisAlignment: CrossAxisAlignment.center,
+            mainAxisSize:  MainAxisSize.min,
+
+            children: [
+ const Divider(height: 5,color: Colors.grey,thickness: 0.5,),
+              Container(
+
+                height: SizeConfig.screenHeight * 0.118,
+                decoration: BoxDecoration(boxShadow:  [
+                  BoxShadow(
+                    color: Colors.grey.withOpacity(0.07),
+                    blurRadius: 2,
+                   spreadRadius: 1,
+                   offset:const Offset(0, 3)
+
+
+
+
+                  )
+                ],
+
+                  color: Colors.white.withOpacity(0.1),
+                  borderRadius: const BorderRadius.all(Radius.circular(15)),
+                ),
+                child: Align(
+                  alignment: Alignment.center,
+                  child: ScrollConfiguration(
+                    behavior: MyBehavior(),
+                    child: ListView.builder(
+                      shrinkWrap: true,
+                      itemCount: navScreens.length,
+                      scrollDirection: Axis.horizontal,
+                      itemBuilder: (context, index) => buildBottomNavItem(
+                        name: navScreens[index].name,
+                          activeIconColor:
+                              indexNav == index ? Colors.white : Colors.black,
+                          iconData: navScreens[index].icon,
+                          onPressed: () {
+                            setState(() {
+                              indexNav = index;
+                            });
+                          },
+                          activeColor: indexNav == index
+                              ? AppColor.globalColor
+                              : Colors.white),
+                    ),
+                  ),
                 ),
               ),
-            ),
+            ],
           ),
           body: Stack(
             children: [
