@@ -13,6 +13,7 @@ class Announcement extends StatelessWidget {
     return ScrollConfiguration(
       behavior: MyBehavior(),
       child: ListView.builder(
+        physics: const BouncingScrollPhysics(),
         padding: const EdgeInsets.symmetric(
           vertical: 20,
         ),

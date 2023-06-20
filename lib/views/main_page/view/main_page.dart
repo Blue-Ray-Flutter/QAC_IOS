@@ -23,6 +23,7 @@ class MainPage extends GetWidget<MainPageController> {
                 ),
               )
             : ListView(
+          physics: const BouncingScrollPhysics(),
                 // crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
@@ -175,7 +176,7 @@ class MainPage extends GetWidget<MainPageController> {
                             style: const TextStyle(
                               color: Colors.black,
                               fontWeight: FontWeight.bold,
-                              fontSize: 17,
+                              fontSize: 25,
                             ),
                           ),
                         ),

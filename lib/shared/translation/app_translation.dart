@@ -41,6 +41,14 @@ class AppTranslation extends Translations {
           'message':'ارسلت رسالتك',
           'Your Message has been sent':'ارسلت رسالتك',
           "Thank you, your request has been successfully received.":"ارسلت رسالتك",
+          'You can buy online cards from here':'يمكنك شراء البطاقة اونلاين من هنا',
+          'Participants':'المشاركين',
+          'Reach':'الوصول',
+          'Winners':'الفائزين',
+          'Enter valid number':'ادخل رقما صالحا',
+          'Email badly formatted':'البريد الالكترروني غير صالح',
+
+
         },
         'en': {}
       };

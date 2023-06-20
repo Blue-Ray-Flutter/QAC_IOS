@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 import '../../../shared/components/button/default_elevated_button.dart';
+import '../../../shared/components/constants/constant_data/constant_data.dart';
 import '../../../shared/components/constants/style/color.dart';
 
 class ContactUs extends GetWidget<ContactUsController> {
@@ -20,6 +21,7 @@ class ContactUs extends GetWidget<ContactUsController> {
     return Form(
         key: controller.formKey,
         child: ListView(
+
           padding: const EdgeInsets.only(
             top: 45,
           ),
@@ -100,6 +102,11 @@ class ContactUs extends GetWidget<ContactUsController> {
                 if (value == null || value.isEmpty) {
                   return 'Phone number is required'.tr;
                 }
+    bool emailValid =RegExp(
+        r'(^(?:[+0]9)?[0-9]{10}$)')
+        .hasMatch(value);
+    if (!emailValid) {
+    return 'Enter valid number'.tr;}
                 return null;
               },
               decoration: InputDecoration(
@@ -132,7 +139,14 @@ class ContactUs extends GetWidget<ContactUsController> {
 
               validator: (value) {
                 if (value == null || value.isEmpty) {
+
                   return 'Email address is required'.tr;
+                }
+                bool emailValid =RegExp(
+                    r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+                    .hasMatch(value);
+                if (!emailValid) {
+                  return 'Email badly formatted'.tr;
                 }
                 return null;
               },

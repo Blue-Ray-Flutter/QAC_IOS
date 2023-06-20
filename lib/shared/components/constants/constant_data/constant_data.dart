@@ -16,6 +16,11 @@ import '../style/color.dart';
 
 String appId = "acea0bfc-f639-4fa3-9de4-ad22d617b864";
 int indexNav = 1;
+bool isValidEmail(value) {
+  return RegExp(
+      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+      .hasMatch(value);
+}
 
 List<MoreItemModel> moreItemList = [
   MoreItemModel(
