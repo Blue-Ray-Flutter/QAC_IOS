@@ -3,12 +3,15 @@ class Assets {
   Assets._();
 
   static const String assetsImagesDelivered = 'assets/images/delivered.jpg';
+  static const String assetsImagesJouhdLogo = 'assets/images/jouhd_logo.png';
   static const String assetsImagesLogo = 'assets/images/logo.png';
   static const String assetsImagesQacLogo = 'assets/images/qac_logo.png';
   static const String imagesAudio = 'assets/images/audio.png';
   static const String imagesBack2 = 'assets/images/back-2.png';
   static const String imagesCommities = 'assets/images/commities.png';
   static const String imagesDelivered = 'assets/images/delivered.jpg';
+  static const String imagesEfawateer = 'assets/images/efawateer.png';
+  static const String imagesHand = 'assets/images/hand.jpg';
   static const String imagesInfobook = 'assets/images/infobook.png';
   static const String imagesJouhdLogo = 'assets/images/jouhd_logo.png';
   static const String imagesLeaf = 'assets/images/leaf.png';
@@ -16,6 +19,7 @@ class Assets {
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesMision = 'assets/images/mision.png';
   static const String imagesNews = 'assets/images/news.png';
+  static const String imagesPart = 'assets/images/part.jpg';
   static const String imagesPrintable = 'assets/images/printable.png';
   static const String imagesQacHome2 = 'assets/images/qac-home2.png';
   static const String imagesQacLogo = 'assets/images/qac_logo.png';
@@ -24,5 +28,6 @@ class Assets {
   static const String imagesUtils = 'assets/images/utils.png';
   static const String imagesVideo = 'assets/images/video.png';
   static const String imagesVision = 'assets/images/vision.png';
+  static const String imagesWinners = 'assets/images/winners.jpg';
 
 }

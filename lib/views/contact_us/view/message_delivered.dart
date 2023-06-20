@@ -1,6 +1,7 @@
 import 'package:adobe/generated/assets.dart';
 import 'package:adobe/res/assets_res.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class MessageDelivered extends StatelessWidget {
   const MessageDelivered({super.key});
@@ -8,12 +9,13 @@ class MessageDelivered extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return  Scaffold(
+      backgroundColor: Colors.white,
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
        children: [
          Image.asset(
            Assets.imagesDelivered),
-         const Text('Your Message has been sent',style: TextStyle(
+          Text('Your Message has been sent'.tr,style: const TextStyle(
            fontWeight: FontWeight.bold,
            fontSize: 25
          ),)

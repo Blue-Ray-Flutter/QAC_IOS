@@ -51,11 +51,9 @@ class _VisionWebViewState extends State<VisionWebView> {
                 });
               },
             ),
-            Container(
-              child: const Center(
-                child: CircularProgressIndicator(
-                  color: AppColor.darkRedBanner,
-                ),
+            const Center(
+              child: CircularProgressIndicator(
+                color: AppColor.darkRedBanner,
               ),
             ),
           ]),

@@ -52,11 +52,9 @@ class _AboutUsWebViewState extends State<AboutUsWebView> {
                 });
               },
             ),
-            Container(
-              child: const Center(
-                child: CircularProgressIndicator(
-                  color: AppColor.darkRedBanner,
-                ),
+            const Center(
+              child: CircularProgressIndicator(
+                color: AppColor.darkRedBanner,
               ),
             ),
           ]),

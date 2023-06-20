@@ -61,8 +61,8 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
     );
     if (response.isOk) {
       Get.snackbar(
-        'Contact us',
-        '${response.body!["data"]["message"]}',
+        'Contact Us'.tr,
+        '${response.body!["data"]["message"]}'.tr,
         icon: const Icon(
           Icons.done,
           color: Colors.white,
@@ -79,8 +79,8 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
       );
     } else if (response.hasError) {
       Get.snackbar(
-        'Contact us',
-        '${response.body!["data"]["message"]}',
+        'Contact Us'.tr,
+        '${response.body!["data"]["message"]}'.tr,
         icon: const Icon(
           Icons.warning,
           color: Colors.white,

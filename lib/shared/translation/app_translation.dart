@@ -10,7 +10,7 @@ class AppTranslation extends Translations {
           'Phone Number': 'رقم الهاتف',
           'Email Address': 'البريد الاكتروني',
           'Your Question': 'السؤال',
-          'Contact Us': 'أتصل بنا',
+          'Contact Us': 'اتصل بنا',
           'Home Page': 'الصفحة الرئيسية',
           'Announcement': 'المركز الاعلامي',
           'Printed Media': 'المطبوعات',
@@ -38,6 +38,9 @@ class AppTranslation extends Translations {
           'Phone number is required': 'رقم الهاتف مطلوب',
           'Email address is required': 'البريد الاكتروني مطلوب',
           'Your question is required': 'السؤال مطلوب',
+          'message':'ارسلت رسالتك',
+          'Your Message has been sent':'ارسلت رسالتك',
+          "Thank you, your request has been successfully received.":"ارسلت رسالتك",
         },
         'en': {}
       };
