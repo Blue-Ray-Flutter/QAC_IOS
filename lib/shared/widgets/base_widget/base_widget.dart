@@ -33,15 +33,14 @@ class _BaseWidgetState extends State<BaseWidget> {
                         color: Colors.grey.withOpacity(0.2),
                         blurRadius: 2,
                         spreadRadius: 1,
-                        offset: const Offset(0, 3))
+                        offset: const Offset(0, -3))
                   ],
-                  color: Colors.white.withOpacity(0.1),
+                  color: Colors.white,
                   borderRadius: const BorderRadius.all(Radius.circular(35)),
                 ),
                 child: Align(
                   alignment: Alignment.center,
                   child: ScrollConfiguration(
-
                     behavior: MyBehavior(),
                     child: ListView.builder(
                       physics: const BouncingScrollPhysics(),
@@ -49,7 +48,7 @@ class _BaseWidgetState extends State<BaseWidget> {
                       itemCount: navScreens.length,
                       scrollDirection: Axis.horizontal,
                       itemBuilder: (context, index) => buildBottomNavItem(
-                        context: context,
+                          context: context,
                           name: navScreens[index].name,
                           selectedNameColor: indexNav == index
                               ? AppColor.globalColor

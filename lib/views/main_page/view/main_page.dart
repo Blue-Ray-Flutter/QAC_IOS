@@ -23,7 +23,10 @@ class MainPage extends GetWidget<MainPageController> {
                 ),
               )
             : ListView(
-          physics: const BouncingScrollPhysics(),
+                physics: const BouncingScrollPhysics(),
+                padding: const EdgeInsets.only(
+                  bottom: 40,
+                ),
                 // crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
                   Container(
@@ -166,28 +169,26 @@ class MainPage extends GetWidget<MainPageController> {
                   InkWell(
                     onTap: () {},
                     child: Stack(
-                      alignment: Alignment.center,
+                      alignment: Alignment.topCenter,
                       children: [
-                        Positioned(
-                          left: SizeConfig.screenWidth * 0.15,
-                          top: SizeConfig.screenHeight * 0.01,
-                          child: Text(
-                            'You can buy online cards from here'.tr,
-                            style: const TextStyle(
-                              color: Colors.black,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 25,
-                            ),
+                        Text(
+                          'You can buy online cards from here'.tr,
+                          style: const TextStyle(
+                            color: Colors.black,
+                            fontWeight: FontWeight.bold,
+                            fontSize: 25,
                           ),
                         ),
-                        Container(
-                          height: SizeConfig.screenHeight * 0.3,
-                          width: SizeConfig.screenWidth * 0.7,
-                          decoration: const BoxDecoration(
-                              image: DecorationImage(
-                            image: AssetImage(Assets.imagesEfawateer),
-                            fit: BoxFit.contain,
-                          )),
+                        Center(
+                          child: Container(
+                            height: SizeConfig.screenHeight * 0.3,
+                            width: SizeConfig.screenWidth * 0.7,
+                            decoration: const BoxDecoration(
+                                image: DecorationImage(
+                              image: AssetImage(Assets.imagesEfawateer),
+                              fit: BoxFit.contain,
+                            )),
+                          ),
                         ),
                       ],
                     ),
