@@ -38,7 +38,7 @@ class _VideosWebViewState extends State<VideosWebView> {
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/media-center/videos',
+              initialUrl: 'https://www.qac.jo/ar/videos',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {
