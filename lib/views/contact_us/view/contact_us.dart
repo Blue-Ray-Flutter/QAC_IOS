@@ -182,6 +182,8 @@ class ContactUs extends GetWidget<ContactUsController> {
                 }
                 return null;
               },
+              minLines: 5,
+              maxLines: 10,
               decoration: InputDecoration(
                 hintText: 'Your Question'.tr,
                 fillColor: Colors.grey[300]!.withOpacity(0.4),

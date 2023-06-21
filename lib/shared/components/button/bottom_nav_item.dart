@@ -1,9 +1,7 @@
 import 'package:adobe/shared/components/widget/size_config.dart';
 import 'package:flutter/material.dart';
 
-
 Widget buildBottomNavItem({
-
   required IconData iconData,
   required void Function() onPressed,
   required Color activeColor,
@@ -16,12 +14,13 @@ Widget buildBottomNavItem({
 }) {
   SizeConfig().init(context);
   return Padding(
-    padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 2),
-    child: Stack(alignment: Alignment.topCenter,
+    padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 2),
+    child: Stack(
+      alignment: Alignment.topCenter,
       children: [
         SizedBox(
-          height: SizeConfig.screenHeight*0.09,
-          width: SizeConfig.screenWidth*0.15,
+          height: SizeConfig.screenHeight * 0.09,
+          width: SizeConfig.screenWidth * 0.15,
           child: ElevatedButton(
             style: ElevatedButton.styleFrom(
               shape: const CircleBorder(),
@@ -29,24 +28,25 @@ Widget buildBottomNavItem({
               padding: const EdgeInsets.all(10),
             ),
             onPressed: onPressed,
-            child: Icon(
-              iconData,
-              color: activeIconColor,
-              size: 38,
+            child: Center(
+              child: Icon(
+                iconData,
+                color: activeIconColor,
+                size: 30,
+              ),
             ),
           ),
         ),
-
         Align(
           alignment: Alignment.bottomCenter,
-          child: Text(name,
-          style:  TextStyle(
-            fontSize: 12,
-            fontWeight: FontWeight.bold,
-
-            color: selectedNameColor,
-
-          ),),
+          child: Text(
+            name,
+            style: TextStyle(
+              fontSize: 12,
+              fontWeight: FontWeight.bold,
+              color: selectedNameColor,
+            ),
+          ),
         ),
       ],
     ),
