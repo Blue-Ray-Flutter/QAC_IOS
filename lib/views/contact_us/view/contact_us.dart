@@ -1,5 +1,5 @@
-import 'package:adobe/shared/components/gap/gap.dart';
-import 'package:adobe/views/contact_us/controller/contact_us_controller.dart';
+import 'package:qac/shared/components/gap/gap.dart';
+import 'package:qac/views/contact_us/controller/contact_us_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';

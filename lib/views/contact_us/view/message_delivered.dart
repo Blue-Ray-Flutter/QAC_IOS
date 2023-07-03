@@ -1,5 +1,5 @@
-import 'package:adobe/generated/assets.dart';
-import 'package:adobe/res/assets_res.dart';
+import 'package:qac/generated/assets.dart';
+import 'package:qac/res/assets_res.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

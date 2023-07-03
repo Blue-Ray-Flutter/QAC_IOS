@@ -1,7 +1,7 @@
-import 'package:adobe/res.dart';
-import 'package:adobe/shared/components/constants/constant_data/constant_data.dart';
-import 'package:adobe/shared/translation/app_translation.dart';
-import 'package:adobe/shared/widgets/base_widget/base_widget.dart';
+import 'package:qac/res.dart';
+import 'package:qac/shared/components/constants/constant_data/constant_data.dart';
+import 'package:qac/shared/translation/app_translation.dart';
+import 'package:qac/shared/widgets/base_widget/base_widget.dart';
 import 'package:animated_splash_screen/animated_splash_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';

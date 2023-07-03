@@ -1,5 +1,5 @@
-import 'package:adobe/shared/components/constants/style/color.dart';
-import 'package:adobe/shared/components/widget/size_config.dart';
+import 'package:qac/shared/components/constants/style/color.dart';
+import 'package:qac/shared/components/widget/size_config.dart';
 import 'package:flutter/material.dart';
 
 import '../../../main.dart';

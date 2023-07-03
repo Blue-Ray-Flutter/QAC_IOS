@@ -1,9 +1,10 @@
-import 'package:adobe/api/api_url/api_url.dart';
-import 'package:adobe/api/repo/http_repo.dart';
+
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qac/api/repo/http_repo.dart';
 
 import '../../shared/components/constants/style/color.dart';
+import '../api_url/api_url.dart';
 
 class HttpRepositroyImpl extends GetConnect implements HttpRepository {
   @override
