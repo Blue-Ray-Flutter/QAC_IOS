@@ -44,7 +44,7 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
     required String name,
     required String schoolName,
     required String phoneNumber,
-     String? email,
+    String? email,
     required String question,
   }) async {
     final formData = FormData({
@@ -96,5 +96,32 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
         forwardAnimationCurve: Curves.easeOutBack,
       );
     }
+  }
+
+  @override
+  Future<Response?> getHomePage() async {
+    var response = await get(UrlApi.homePageDataUrl);
+    if (response.isOk) {
+      return response;
+    } else if (response.hasError) {
+      Get.snackbar(
+        'Get home page',
+        '${response.body!["message"]}',
+        icon: const Icon(
+          Icons.warning,
+          color: Colors.white,
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColor.globalColor,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+    }
+    return null;
   }
 }

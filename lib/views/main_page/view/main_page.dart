@@ -16,7 +16,8 @@ class MainPage extends GetWidget<MainPageController> {
     return Scaffold(
       backgroundColor: Colors.white,
       body: Obx(() {
-        return controller.flagModel.value == null
+        return controller.flagModel.value == null ||
+                controller.homePageContent.value == null
             ? const Center(
                 child: CircularProgressIndicator(
                   color: AppColor.globalColor,

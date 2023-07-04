@@ -7,6 +7,7 @@ import 'package:get_storage/get_storage.dart';
 import '../../../api/repo/http_repo.dart';
 import '../../../api/repo/http_repo_implementaion.dart';
 import '../../../shared/helper/cache_utils.dart';
+import '../model/home_page_content.dart';
 
 class MainPageController extends GetxController {
   MainPageController();
@@ -15,6 +16,7 @@ class MainPageController extends GetxController {
   GlobalKey bottomNavigationKey = GlobalKey();
 
   Rx<FlagModel?> flagModel = Rx<FlagModel?>(null);
+  Rx<HomePageContent?> homePageContent = Rx<HomePageContent?>(null);
 
   @override
   void onInit() {
@@ -25,12 +27,24 @@ class MainPageController extends GetxController {
   void initialization() async {
     try {
       HttpRepository httpRepository = HttpRepositroyImpl();
+
       CacheUtils cacheUtils = CacheUtils(GetStorage());
+
       Response? flagResponse = await httpRepository.flagApi();
+
       if (flagResponse == null) {
         return;
       }
+
       flagModel.value = FlagModel.fromJson(flagResponse.body);
+
+      Response? homePageResponse = await httpRepository.getHomePage();
+
+      if (homePageResponse == null) {
+        return;
+      }
+
+      homePageContent.value = HomePageContent.fromJson(homePageResponse.body);
     } catch (e) {
       Get.snackbar(
         'Initialization'.tr,
