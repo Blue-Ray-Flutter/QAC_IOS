@@ -1,8 +1,10 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qac/shared/components/constants/style/color.dart';
 import 'package:qac/shared/components/widget/size_config.dart';
 import 'package:qac/views/main_page/controller/main_page_controller.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../generated/assets.dart';
 import '../../../res.dart';
@@ -71,18 +73,32 @@ class MainPage extends GetWidget<MainPageController> {
                           ],
                         ),
                         Positioned(
-                          top: -(SizeConfig.screenHeight * 0.1),
+                          top: (SizeConfig.screenHeight * 0.15),
                           child: Align(
                             alignment: Alignment.center,
-                            child: Container(
-                              height: SizeConfig.screenHeight * 0.8,
-                              width: SizeConfig.screenWidth * 0.8,
-                              decoration: const BoxDecoration(
-                                  image: DecorationImage(
-                                image: AssetImage(Res.leaf),
-                                fit: BoxFit.fitWidth,
-                              )),
-                            ),
+                            child: controller.homePageContent.value!
+                                        .mainSlider![0].image ==
+                                    null
+                                ? Container(
+                                    height: SizeConfig.screenHeight * 0.8,
+                                    width: SizeConfig.screenWidth * 0.8,
+                                    decoration: const BoxDecoration(
+                                        image: DecorationImage(
+                                      image: AssetImage(Res.leaf),
+                                      fit: BoxFit.fitWidth,
+                                    )),
+                                  )
+                                : Container(
+                                    height: SizeConfig.screenHeight * 0.3,
+                                    width: SizeConfig.screenWidth,
+                                    decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                      image: CachedNetworkImageProvider(
+                                          controller.homePageContent.value!
+                                              .mainSlider![0].image!),
+                                      fit: BoxFit.fill,
+                                    )),
+                                  ),
                           ),
                         ),
                         Stack(
@@ -95,26 +111,15 @@ class MainPage extends GetWidget<MainPageController> {
                                 mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
                                   Text(
-                                    'Awareness Campaign to restore the Ecosystem'
-                                        .tr,
+                                    controller.homePageContent.value!
+                                            .mainSlider![0].body ??
+                                        '',
                                     textAlign: TextAlign.center,
                                     style: const TextStyle(
-                                      fontSize: 23,
+                                      fontSize: 20,
                                       color: Colors.pink,
                                       fontWeight: FontWeight.bold,
                                     ),
-                                  ),
-                                  const SizedBox(
-                                    height: 10,
-                                  ),
-                                  Text(
-                                    'Our small daily behavior ... has a big impact on our environment'
-                                        .tr,
-                                    textAlign: TextAlign.center,
-                                    style: const TextStyle(
-                                        fontSize: 17,
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold),
                                   ),
                                 ],
                               ),
@@ -165,10 +170,21 @@ class MainPage extends GetWidget<MainPageController> {
                     ),
                   ),
                   const SizedBox(
-                    height: 20,
+                    height: 30,
                   ),
                   InkWell(
-                    onTap: () {},
+                    onTap: () async {
+                      await launchUrl(
+                          Uri.parse(controller.homePageContent.value!
+                                          .efawateercomLink ==
+                                      null ||
+                                  controller.homePageContent.value!
+                                      .efawateercomLink!.isEmpty
+                              ? 'https://www.qac.jo/'
+                              : controller
+                                  .homePageContent.value!.efawateercomLink!),
+                          mode: LaunchMode.externalApplication);
+                    },
                     child: Stack(
                       alignment: Alignment.topCenter,
                       children: [
@@ -177,7 +193,7 @@ class MainPage extends GetWidget<MainPageController> {
                           style: const TextStyle(
                             color: Colors.black,
                             fontWeight: FontWeight.bold,
-                            fontSize: 25,
+                            fontSize: 22,
                           ),
                         ),
                         Center(
@@ -197,104 +213,136 @@ class MainPage extends GetWidget<MainPageController> {
                   const SizedBox(
                     height: 20,
                   ),
-                  Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Column(
-                        children: [
-                          Container(
-                            height: SizeConfig.screenHeight * 0.07,
-                            width: SizeConfig.screenWidth * 0.25,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(Assets.imagesHand),
-                              fit: BoxFit.contain,
-                            )),
+                  SizedBox(
+                    height: 140,
+                    child: Center(
+                      child: ListView.separated(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.only(
+                            right: 20,
+                            left: 20,
                           ),
-                          Text(
-                            'Participants'.tr,
-                            style: const TextStyle(
-                              color: AppColor.kindaRed,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
+                          separatorBuilder: (context, index) => const SizedBox(
+                                width: 15,
+                              ),
+                          itemBuilder: (context, index) => Column(
+                                mainAxisSize: MainAxisSize.min,
+                                crossAxisAlignment: CrossAxisAlignment.center,
+                                mainAxisAlignment: MainAxisAlignment.center,
+                                children: [
+                                  Container(
+                                    height: SizeConfig.screenHeight * 0.07,
+                                    width: SizeConfig.screenWidth * 0.25,
+                                    decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                        image: CachedNetworkImageProvider(
+                                          controller.homePageContent.value!
+                                              .countsData![index].image!,
+                                        ),
+                                        fit: BoxFit.contain,
+                                      ),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 5,
+                                  ),
+                                  Text(
+                                    controller.homePageContent.value!
+                                            .countsData![index].title ??
+                                        '',
+                                    style: const TextStyle(
+                                      color: AppColor.kindaRed,
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 2,
+                                  ),
+                                  Text(
+                                    controller.homePageContent.value!
+                                            .countsData![index].count ??
+                                        '',
+                                    style: const TextStyle(
+                                      color: AppColor.kindaRed,
+                                      fontSize: 20,
+                                    ),
+                                  ),
+                                ],
+                              ),
+                          itemCount: controller
+                              .homePageContent.value!.countsData!.length),
+                    ),
+                  ),
+                  const SizedBox(
+                    height: 20,
+                  ),
+                  SizedBox(
+                    height: 200,
+                    child: Center(
+                      child: ListView.separated(
+                          shrinkWrap: true,
+                          scrollDirection: Axis.horizontal,
+                          physics: const BouncingScrollPhysics(),
+                          padding: const EdgeInsets.only(
+                            right: 20,
+                            left: 20,
                           ),
-                          Text(
-                            '100000'.tr,
-                            style: const TextStyle(
-                              color: AppColor.kindaRed,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            height: SizeConfig.screenHeight * 0.07,
-                            width: SizeConfig.screenWidth * 0.25,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(Assets.imagesPart),
-                              fit: BoxFit.contain,
-                            )),
-                          ),
-                          Text(
-                            'Reach'.tr,
-                            style: const TextStyle(
-                              color: AppColor.kindaBlue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                          Text(
-                            '100000'.tr,
-                            style: const TextStyle(
-                              color: AppColor.kindaBlue,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                      const SizedBox(
-                        width: 10,
-                      ),
-                      Column(
-                        children: [
-                          Container(
-                            height: SizeConfig.screenHeight * 0.07,
-                            width: SizeConfig.screenWidth * 0.25,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(Assets.imagesWinners),
-                              fit: BoxFit.contain,
-                            )),
-                          ),
-                          Text(
-                            'Winners'.tr,
-                            style: const TextStyle(
-                              color: AppColor.kindaGold,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                          Text(
-                            '100000'.tr,
-                            style: const TextStyle(
-                              color: AppColor.kindaGold,
-                              fontWeight: FontWeight.bold,
-                              fontSize: 20,
-                            ),
-                          ),
-                        ],
-                      ),
-                    ],
-                  )
+                          separatorBuilder: (context, index) => const SizedBox(
+                                width: 15,
+                              ),
+                          itemBuilder: (context, index) => InkWell(
+                                onTap: () async {
+                                  await launchUrl(
+                                    Uri.parse(controller.homePageContent.value!
+                                                    .partnersSlider ==
+                                                null ||
+                                            controller.homePageContent.value!
+                                                .partnersSlider!.isEmpty
+                                        ? 'https://www.qac.jo/'
+                                        : controller.homePageContent.value!
+                                            .partnersSlider![index].link!),
+                                    mode: LaunchMode.externalApplication,
+                                  );
+                                },
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    Container(
+                                      height: SizeConfig.screenHeight * 0.15,
+                                      width: SizeConfig.screenWidth * 0.25,
+                                      decoration: BoxDecoration(
+                                        image: DecorationImage(
+                                          image: CachedNetworkImageProvider(
+                                            controller.homePageContent.value!
+                                                .partnersSlider![index].image!,
+                                          ),
+                                          fit: BoxFit.contain,
+                                        ),
+                                      ),
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Text(
+                                      controller.homePageContent.value!
+                                              .partnersSlider![index].title ??
+                                          '',
+                                      style: const TextStyle(
+                                        color: AppColor.kindaRed,
+                                        fontSize: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                          itemCount: controller
+                              .homePageContent.value!.partnersSlider!.length),
+                    ),
+                  ),
                 ],
               );
       }),

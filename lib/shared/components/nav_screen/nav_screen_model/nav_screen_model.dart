@@ -1,8 +1,8 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qac/views/announcment/view/announcment.dart';
 import 'package:qac/views/contact_us/view/contact_us.dart';
 import 'package:qac/views/main_page/view/main_page.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../../../../views/more/view/more.dart';
 
@@ -37,7 +37,7 @@ List navScreens = <BottomNavItemModel>[
   ),
   BottomNavItemModel(
     name: 'About Us'.tr,
-    icon: Icons.list_alt_rounded,
+    icon: Icons.info_outline,
     navBarItem: NavBarItem.aboutUs,
     widget: const MoreItems(),
   ),
@@ -47,12 +47,10 @@ List navScreens = <BottomNavItemModel>[
     navBarItem: NavBarItem.announcement,
     widget: const Announcement(),
   ),
-
   BottomNavItemModel(
     name: 'Contact Us'.tr,
     icon: Icons.email_outlined,
     navBarItem: NavBarItem.contactus,
     widget: const ContactUs(),
   ),
-
 ];
