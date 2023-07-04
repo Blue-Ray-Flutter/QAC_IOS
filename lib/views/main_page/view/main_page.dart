@@ -1,6 +1,6 @@
-import 'package:adobe/shared/components/constants/style/color.dart';
-import 'package:adobe/shared/components/widget/size_config.dart';
-import 'package:adobe/views/main_page/controller/main_page_controller.dart';
+import 'package:qac/shared/components/constants/style/color.dart';
+import 'package:qac/shared/components/widget/size_config.dart';
+import 'package:qac/views/main_page/controller/main_page_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

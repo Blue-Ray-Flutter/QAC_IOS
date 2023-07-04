@@ -1,4 +1,4 @@
-import 'package:adobe/shared/components/constants/style/color.dart';
+import 'package:qac/shared/components/constants/style/color.dart';
 import 'package:flutter/material.dart';
 
 

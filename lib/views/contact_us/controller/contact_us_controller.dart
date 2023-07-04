@@ -1,6 +1,6 @@
-import 'package:adobe/api/repo/http_repo.dart';
-import 'package:adobe/shared/components/constants/style/color.dart';
-import 'package:adobe/shared/helper/cache_utils.dart';
+import 'package:qac/api/repo/http_repo.dart';
+import 'package:qac/shared/components/constants/style/color.dart';
+import 'package:qac/shared/helper/cache_utils.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 

@@ -1,5 +1,5 @@
-import 'package:adobe/shared/components/constants/style/color.dart';
-import 'package:adobe/views/main_page/model/flag_model.dart';
+import 'package:qac/shared/components/constants/style/color.dart';
+import 'package:qac/views/main_page/model/flag_model.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
