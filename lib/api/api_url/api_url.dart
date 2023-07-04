@@ -3,4 +3,5 @@ class UrlApi {
   static const flagUrl = "${baseUrl}competitionTime";
   static const contactUrl = "${baseUrl}contactWebForm";
   static const homePageDataUrl = "${baseUrl}ar/homePageData";
+  //
 }
