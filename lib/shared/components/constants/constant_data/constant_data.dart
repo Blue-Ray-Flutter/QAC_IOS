@@ -18,7 +18,7 @@ String appId = "acea0bfc-f639-4fa3-9de4-ad22d617b864";
 int indexNav = 1;
 bool isValidEmail(value) {
   return RegExp(
-      r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
+          r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
       .hasMatch(value);
 }
 
@@ -82,7 +82,7 @@ List<MoreItemModel> mediaCenterList = [
     onPressed: () {
       Get.to(() => MediaCenterWebView());
     },
-    color: AppColor.blueBanner,
+    color: AppColor.red,
     text: 'Printed Media'.tr,
     height: 300,
     width: 300,
@@ -93,7 +93,7 @@ List<MoreItemModel> mediaCenterList = [
     onPressed: () {
       Get.to(() => const NewsWebView());
     },
-    color: AppColor.purpleBanner,
+    color: Colors.lightGreen,
     text: 'News'.tr,
     height: 300,
     width: 300,
@@ -103,7 +103,7 @@ List<MoreItemModel> mediaCenterList = [
     onPressed: () {
       Get.to(() => VideosWebView());
     },
-    color: AppColor.orangeBanner,
+    color: Colors.purple,
     text: 'Videos Gallery'.tr,
     height: 250,
     width: 250,
@@ -113,7 +113,7 @@ List<MoreItemModel> mediaCenterList = [
     onPressed: () {
       Get.to(() => AudiblesWebView());
     },
-    color: AppColor.greenBanner,
+    color: Colors.teal,
     text: 'Audibles'.tr,
     height: 300,
     width: 300,

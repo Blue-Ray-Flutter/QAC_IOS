@@ -196,15 +196,21 @@ class MainPage extends GetWidget<MainPageController> {
                             fontSize: 22,
                           ),
                         ),
-                        Center(
-                          child: Container(
-                            height: SizeConfig.screenHeight * 0.3,
-                            width: SizeConfig.screenWidth * 0.7,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(Assets.imagesEfawateer),
-                              fit: BoxFit.contain,
-                            )),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 15,
+                            bottom: 15,
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: SizeConfig.screenHeight * 0.2,
+                              width: SizeConfig.screenWidth * 0.5,
+                              decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                image: AssetImage(Assets.imagesEfawateer),
+                                fit: BoxFit.contain,
+                              )),
+                            ),
                           ),
                         ),
                       ],
