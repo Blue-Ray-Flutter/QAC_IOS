@@ -19,7 +19,8 @@ class MainPage extends GetWidget<MainPageController> {
       backgroundColor: Colors.white,
       body: Obx(() {
         return controller.flagModel.value == null ||
-                controller.homePageContent.value == null
+                controller.homePageContent.value == null ||
+                controller.flagMK.value == null
             ? const Center(
                 child: CircularProgressIndicator(
                   color: AppColor.globalColor,
@@ -124,6 +125,100 @@ class MainPage extends GetWidget<MainPageController> {
                                 ],
                               ),
                             ),
+                            Obx(() {
+                              return controller.flagMK.value == 1
+                                  ? Container()
+                                  : Container(
+                                      decoration: const BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          color: AppColor.lightPink),
+                                      height: SizeConfig.screenHeight * 0.18,
+                                      width: SizeConfig.screenWidth * 0.18,
+                                      child: ElevatedButton(
+                                          style: ElevatedButton.styleFrom(
+                                            shape: const CircleBorder(),
+                                            backgroundColor: Colors.pink,
+                                          ),
+                                          onPressed: () {
+                                            showDialog<void>(
+                                              context: context,
+                                              barrierDismissible:
+                                                  false, // user must tap button!
+                                              builder: (BuildContext context) {
+                                                return AlertDialog(
+                                                  // <-- SEE HERE
+                                                  title: const Text(
+                                                      'Apply to prize'),
+                                                  content:
+                                                      const SingleChildScrollView(
+                                                    child: ListBody(
+                                                      children: <Widget>[
+                                                        Text(
+                                                            'Are you sure want to apply to prize?'),
+                                                      ],
+                                                    ),
+                                                  ),
+                                                  actions: <Widget>[
+                                                    TextButton(
+                                                      child: const Text('No'),
+                                                      onPressed: () {
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                    ),
+                                                    TextButton(
+                                                      child: const Text('Yes'),
+                                                      onPressed: () {
+                                                        Get.snackbar(
+                                                          'Application Done'.tr,
+                                                          'If you have successfully applied for the competition, you will be contacted as soon as possible'
+                                                              .tr,
+                                                          icon: const Icon(
+                                                            Icons.done,
+                                                            color: Colors.white,
+                                                          ),
+                                                          snackPosition:
+                                                              SnackPosition.TOP,
+                                                          backgroundColor:
+                                                              AppColor
+                                                                  .globalColor,
+                                                          borderRadius: 15,
+                                                          margin:
+                                                              const EdgeInsets
+                                                                  .all(15),
+                                                          colorText:
+                                                              Colors.white,
+                                                          duration:
+                                                              const Duration(
+                                                                  seconds: 4),
+                                                          isDismissible: true,
+                                                          dismissDirection:
+                                                              DismissDirection
+                                                                  .horizontal,
+                                                          forwardAnimationCurve:
+                                                              Curves
+                                                                  .easeOutBack,
+                                                        );
+
+                                                        Navigator.of(context)
+                                                            .pop();
+                                                      },
+                                                    ),
+                                                  ],
+                                                );
+                                              },
+                                            );
+                                          },
+                                          child: Text(
+                                            'Apply to prize'.tr,
+                                            textAlign: TextAlign.center,
+                                            style: const TextStyle(
+                                                fontSize: 10,
+                                                fontWeight: FontWeight.bold,
+                                                color: Colors.white),
+                                          )),
+                                    );
+                            }),
                             SizedBox(
                               height: SizeConfig.screenHeight * 0.2,
                               width: SizeConfig.screenWidth,
@@ -196,15 +291,21 @@ class MainPage extends GetWidget<MainPageController> {
                             fontSize: 22,
                           ),
                         ),
-                        Center(
-                          child: Container(
-                            height: SizeConfig.screenHeight * 0.3,
-                            width: SizeConfig.screenWidth * 0.7,
-                            decoration: const BoxDecoration(
-                                image: DecorationImage(
-                              image: AssetImage(Assets.imagesEfawateer),
-                              fit: BoxFit.contain,
-                            )),
+                        Padding(
+                          padding: const EdgeInsets.only(
+                            top: 15,
+                            bottom: 15,
+                          ),
+                          child: Center(
+                            child: Container(
+                              height: SizeConfig.screenHeight * 0.2,
+                              width: SizeConfig.screenWidth * 0.5,
+                              decoration: const BoxDecoration(
+                                  image: DecorationImage(
+                                image: AssetImage(Assets.imagesEfawateer),
+                                fit: BoxFit.contain,
+                              )),
+                            ),
                           ),
                         ),
                       ],

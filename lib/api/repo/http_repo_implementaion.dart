@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:qac/api/repo/http_repo.dart';
@@ -122,6 +121,16 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
         dismissDirection: DismissDirection.horizontal,
         forwardAnimationCurve: Curves.easeOutBack,
       );
+    }
+    return null;
+  }
+
+  @override
+  Future<Response?> flagApi1() async {
+    var response = await get(UrlApi.getFlag);
+    if (response.isOk) {
+      print('\n\n\n\n\n\n\n\n\n\n\n isOk \n\n\n\n\n\n\n\n\n\n\n');
+      return response;
     }
     return null;
   }

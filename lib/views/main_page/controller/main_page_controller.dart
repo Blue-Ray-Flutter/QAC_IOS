@@ -16,6 +16,7 @@ class MainPageController extends GetxController {
   GlobalKey bottomNavigationKey = GlobalKey();
 
   Rx<FlagModel?> flagModel = Rx<FlagModel?>(null);
+  Rx<int?> flagMK = Rx<int?>(null);
   Rx<HomePageContent?> homePageContent = Rx<HomePageContent?>(null);
 
   @override
@@ -30,12 +31,16 @@ class MainPageController extends GetxController {
 
       CacheUtils cacheUtils = CacheUtils(GetStorage());
 
+      print('\n\n\n\n\n\n\n\n\n\n\n flagResponse1 \n\n\n\n\n\n\n\n\n\n\n');
+
       Response? flagResponse = await httpRepository.flagApi();
+      Response? flagResponse1 = await httpRepository.flagApi1();
 
       if (flagResponse == null) {
         return;
       }
 
+      flagMK.value = flagResponse1!.body;
       flagModel.value = FlagModel.fromJson(flagResponse.body);
 
       Response? homePageResponse = await httpRepository.getHomePage();
