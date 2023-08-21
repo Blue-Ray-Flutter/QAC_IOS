@@ -1,9 +1,9 @@
-import 'package:qac/shared/components/gap/gap.dart';
-import 'package:qac/views/contact_us/controller/contact_us_controller.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
-import 'package:url_launcher/url_launcher.dart';
+import 'package:qac/shared/components/gap/gap.dart';
+import 'package:qac/shared/helper/helper.dart';
+import 'package:qac/views/contact_us/controller/contact_us_controller.dart';
 
 import '../../../shared/components/button/default_elevated_button.dart';
 import '../../../shared/components/constants/style/color.dart';
@@ -264,11 +264,8 @@ class ContactUs extends GetWidget<ContactUsController> {
               children: [
                 IconButton(
                     onPressed: () async {
-                      String url = "https://www.facebook.com/qac.jo";
-                      if (await canLaunchUrl(Uri.parse(url))) {
-                        await launchUrl(Uri.parse(url),
-                            mode: LaunchMode.externalApplication);
-                      }
+                      HelperUtils.launchExternalUrl(
+                          "https://www.facebook.com/qac.jo");
                     },
                     icon: const Icon(
                       FontAwesomeIcons.facebook,
@@ -276,11 +273,8 @@ class ContactUs extends GetWidget<ContactUsController> {
                     )),
                 IconButton(
                   onPressed: () async {
-                    String url = 'https://www.youtube.com/user/qacjo';
-                    if (await canLaunchUrl(Uri.parse(url))) {
-                      await launchUrl(Uri.parse(url),
-                          mode: LaunchMode.externalApplication);
-                    }
+                    HelperUtils.launchExternalUrl(
+                        'https://www.youtube.com/user/qacjo');
                   },
                   icon: const Icon(
                     FontAwesomeIcons.youtube,

@@ -1,6 +1,6 @@
+import 'package:flutter/material.dart';
 import 'package:qac/shared/components/constants/style/color.dart';
 import 'package:qac/shared/components/widget/size_config.dart';
-import 'package:flutter/material.dart';
 
 import '../../../main.dart';
 import '../../components/button/bottom_nav_item.dart';
@@ -75,8 +75,8 @@ class _BaseWidgetState extends State<BaseWidget> {
               Padding(
                 padding: navScreens[indexNav].navBarItem == NavBarItem.home
                     ? const EdgeInsetsDirectional.only(top: 0)
-                    : const EdgeInsetsDirectional.only(
-                        top: 40,
+                    : EdgeInsetsDirectional.only(
+                        top: (SizeConfig.screenHeight * 0.065) * .5,
                         start: 30,
                         end: 30,
                       ),
