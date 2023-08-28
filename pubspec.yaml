@@ -11,7 +11,6 @@ dependencies:
   flutter:
     sdk: flutter
 
-
   cupertino_icons: ^1.0.2
   flutter_svg: ^2.0.5
   card_slider: ^1.0.5
@@ -53,3 +52,9 @@ flutter:
     - assets/images/part.jpg
     - assets/images/qac_logo.png
     - assets/images/winners.jpg
+    - assets/test/prize_1.jpg
+    - assets/test/prize_2.jpg
+    - assets/test/prize_3.jpg
+    - assets/test/prize_4.jpg
+    - assets/test/test_1.png
+    - assets/test/test_2.jpg

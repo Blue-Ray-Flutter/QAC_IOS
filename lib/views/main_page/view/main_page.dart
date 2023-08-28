@@ -138,10 +138,10 @@ class MainPage extends GetWidget<MainPageController> {
                                             color: AppColor.lightPink),
                                         height: SizeConfig.screenWidth > 500
                                             ? SizeConfig.screenHeight * 0.10
-                                            : SizeConfig.screenHeight * 0.17,
+                                            : SizeConfig.screenHeight * 0.18,
                                         width: SizeConfig.screenWidth > 500
                                             ? SizeConfig.screenHeight * 0.10
-                                            : SizeConfig.screenWidth * 0.17,
+                                            : SizeConfig.screenWidth * 0.18,
                                         child: ElevatedButton(
                                             style: ElevatedButton.styleFrom(
                                               shape: const CircleBorder(),
@@ -158,6 +158,7 @@ class MainPage extends GetWidget<MainPageController> {
                                                     // <-- SEE HERE
                                                     title: const Text(
                                                       'Apply to prize',
+                                                      style: TextStyle(),
                                                     ),
                                                     content:
                                                         const SingleChildScrollView(
