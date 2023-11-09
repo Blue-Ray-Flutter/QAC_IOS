@@ -16,6 +16,7 @@ class AppBindings extends Bindings {
     final cacheUtils = Get.put(CacheUtils(GetStorage()), permanent: true);
 
     Get.create(() => MainPageController());
+
     Get.create(() => ContactUsController(
         httpRepository: repository, cacheUtils: cacheUtils));
   }

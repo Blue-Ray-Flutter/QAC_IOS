@@ -11,9 +11,9 @@ class AppColor {
   static const kindaBlue = Color(0xFF576f9d);
   static const kindaRed = Color(0xFFd4585b);
   static const kindaGold = Color(0xFFdabb14);
+  static const kindaGrey = Color(0xFFE3E1E5);
 
   static const greenBanner = Color(0xFFa7e169);
   static const darkRedBanner = Color(0xFFc25165);
   static const transparentColor = Color.fromRGBO(255, 255, 255, 0);
-
 }

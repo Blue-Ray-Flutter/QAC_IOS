@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../../shared/components/constants/style/color.dart';
+import '../../../../shared/widgets/loading_widget/loading_widget.dart';
 
 class AboutUsWebView extends StatefulWidget {
   AboutUsWebView({Key? key}) : super(key: key);
@@ -39,7 +40,7 @@ class _AboutUsWebViewState extends State<AboutUsWebView> {
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/about-us',
+              initialUrl: 'https://qac.jo/ar/about-us',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {
@@ -52,11 +53,7 @@ class _AboutUsWebViewState extends State<AboutUsWebView> {
                 });
               },
             ),
-            const Center(
-              child: CircularProgressIndicator(
-                color: AppColor.darkRedBanner,
-              ),
-            ),
+            const LoadingWidget(),
           ]),
         ));
   }

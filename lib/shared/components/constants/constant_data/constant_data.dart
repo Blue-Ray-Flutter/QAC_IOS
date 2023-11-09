@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../../res.dart';
-import '../../../../views/announcment/pages/audibles/audibles.dart';
-import '../../../../views/announcment/pages/media_center/media_center.dart';
-import '../../../../views/announcment/pages/news/news.dart';
-import '../../../../views/announcment/pages/videos/videos.dart';
+import '../../../../views/announcment/pages/audibles/view/audibles.dart';
+import '../../../../views/announcment/pages/media_center/view/media_center.dart';
+import '../../../../views/announcment/pages/news/view/news.dart';
+import '../../../../views/announcment/pages/videos/view/videos.dart';
 import '../../../../views/more/model/more_item_model.dart';
 import '../../../../views/more/pages/about/about.dart';
 import '../../../../views/more/pages/committiees/committees.dart';
@@ -16,24 +16,6 @@ import '../style/color.dart';
 
 String appId = "acea0bfc-f639-4fa3-9de4-ad22d617b864";
 int indexNav = 1;
-int indexTestNav = 1;
-
-class ConstantData {
-  int? _flagMK;
-
-  ConstantData._privateConstructor();
-
-  static final ConstantData _instance = ConstantData._privateConstructor();
-
-  static ConstantData get instance => _instance;
-
-  int? get getFlagMK => _flagMK;
-
-  set flagMK(int? value) {
-    _flagMK = value;
-  }
-}
-
 bool isValidEmail(value) {
   return RegExp(
           r'^(([^<>()[\]\\.,;:\s@\"]+(\.[^<>()[\]\\.,;:\s@\"]+)*)|(\".+\"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$')
@@ -119,7 +101,7 @@ List<MoreItemModel> mediaCenterList = [
   MoreItemModel(
     svg: Res.video,
     onPressed: () {
-      Get.to(() => VideosWebView());
+      Get.to(() => const VideoPlayerPage());
     },
     color: Colors.purple,
     text: 'Videos Gallery'.tr,
@@ -129,7 +111,7 @@ List<MoreItemModel> mediaCenterList = [
   MoreItemModel(
     svg: Res.audio,
     onPressed: () {
-      Get.to(() => AudiblesWebView());
+      Get.to(() => AudiblesPage());
     },
     color: Colors.teal,
     text: 'Audibles'.tr,

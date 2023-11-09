@@ -134,4 +134,148 @@ class HttpRepositroyImpl extends GetConnect implements HttpRepository {
     }
     return null;
   }
+
+  @override
+  Future<Response?> getNews({String? lang}) async {
+    final formData = FormData({"lang": lang});
+    var response = await post(UrlApi.getNewsUrl, formData);
+    if (response.isOk) {
+      return response;
+    } else if (response.hasError) {
+      Get.snackbar(
+        "News".tr,
+        '${response.body!["message"]}',
+        icon: const Icon(
+          Icons.warning,
+          color: Colors.white,
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColor.globalColor,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+    }
+    return null;
+  }
+
+  @override
+  Future<Response?> getVideo({String? lang}) async {
+    final formData = FormData({"lang": lang});
+    var response = await post(UrlApi.getVideoUrl, formData);
+    if (response.isOk) {
+      return response;
+    } else if (response.hasError) {
+      Get.snackbar(
+        "Video".tr,
+        '${response.body!["message"]}',
+        icon: const Icon(
+          Icons.warning,
+          color: Colors.white,
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColor.globalColor,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+    }
+    return null;
+  }
+
+  @override
+  Future<Response?> getAudio({String? lang}) async {
+    final formData = FormData({
+      "lang": 'ar',
+    });
+    var response = await post(UrlApi.getAudioUrl, formData);
+    if (response.isOk) {
+      return response;
+    } else if (response.hasError) {
+      Get.snackbar(
+        "Audio".tr,
+        '${response.body!["message"]}',
+        icon: const Icon(
+          Icons.warning,
+          color: Colors.white,
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColor.globalColor,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+    }
+    return null;
+  }
+
+  @override
+  Future<Response?> getMedia({String? lang}) async {
+    final formData = FormData({
+      "lang": 'ar',
+    });
+    var response = await post(UrlApi.getMediaUrl, formData);
+    if (response.isOk) {
+      return response;
+    } else if (response.hasError) {
+      Get.snackbar(
+        "Media".tr,
+        '${response.body!["message"]}',
+        icon: const Icon(
+          Icons.warning,
+          color: Colors.white,
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColor.globalColor,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+    }
+    return null;
+  }
+
+  @override
+  Future<Response?> getNewsArticle({String? lang, required String nid}) async {
+    final formData = FormData({"lang": lang, "nid": nid});
+    var response = await post(UrlApi.getNewsArticleUrl, formData);
+    if (response.isOk) {
+      return response;
+    } else if (response.hasError) {
+      Get.snackbar(
+        "News Article".tr,
+        '${response.body!["message"]}',
+        icon: const Icon(
+          Icons.warning,
+          color: Colors.white,
+        ),
+        snackPosition: SnackPosition.TOP,
+        backgroundColor: AppColor.globalColor,
+        borderRadius: 15,
+        margin: const EdgeInsets.all(15),
+        colorText: Colors.white,
+        duration: const Duration(seconds: 4),
+        isDismissible: true,
+        dismissDirection: DismissDirection.horizontal,
+        forwardAnimationCurve: Curves.easeOutBack,
+      );
+    }
+    return null;
+  }
 }

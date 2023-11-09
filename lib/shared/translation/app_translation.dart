@@ -38,17 +38,17 @@ class AppTranslation extends Translations {
           'Phone number is required': 'رقم الهاتف مطلوب',
           'Email address is required': 'البريد الاكتروني مطلوب',
           'Your question is required': 'السؤال مطلوب',
-          'message':'ارسلت رسالتك',
-          'Your Message has been sent':'ارسلت رسالتك',
-          "Thank you, your request has been successfully received.":"ارسلت رسالتك",
-          'You can buy online cards from here':'يمكنك شراء البطاقة اونلاين من هنا',
-          'Participants':'المشاركين',
-          'Reach':'الوصول',
-          'Winners':'الفائزين',
-          'Enter valid number':'ادخل رقما صالحا',
-          'Email badly formatted':'البريد الالكترروني غير صالح',
-
-
+          'message': 'ارسلت رسالتك',
+          'Your Message has been sent': 'ارسلت رسالتك',
+          "Thank you, your request has been successfully received.":
+              "ارسلت رسالتك",
+          'You can buy online cards from here':
+              'يمكنك شراء البطاقة اونلاين من هنا',
+          'Participants': 'المشاركين',
+          'Reach': 'الوصول',
+          'Winners': 'الفائزين',
+          'Enter valid number': 'ادخل رقما صالحا',
+          'Email badly formatted': 'البريد الالكترروني غير صالح',
         },
         'en': {}
       };

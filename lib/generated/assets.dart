@@ -10,8 +10,6 @@ class Assets {
   static const String assetsImagesPart = 'assets/images/part.jpg';
   static const String assetsImagesQacLogo = 'assets/images/qac_logo.png';
   static const String assetsImagesWinners = 'assets/images/winners.jpg';
-  static const String assetsTestTest1 = 'assets/test/test_1.png';
-  static const String assetsTestTest2 = 'assets/test/test_2.jpg';
   static const String imagesAudio = 'assets/images/audio.png';
   static const String imagesBack2 = 'assets/images/back-2.png';
   static const String imagesCommities = 'assets/images/commities.png';
@@ -21,6 +19,7 @@ class Assets {
   static const String imagesInfobook = 'assets/images/infobook.png';
   static const String imagesJouhdLogo = 'assets/images/jouhd_logo.png';
   static const String imagesLeaf = 'assets/images/leaf.png';
+  static const String imagesLoadingBook = 'assets/images/loading_book.gif';
   static const String imagesLogin = 'assets/images/login.svg';
   static const String imagesLogo = 'assets/images/logo.png';
   static const String imagesMision = 'assets/images/mision.png';
@@ -35,10 +34,4 @@ class Assets {
   static const String imagesVideo = 'assets/images/video.png';
   static const String imagesVision = 'assets/images/vision.png';
   static const String imagesWinners = 'assets/images/winners.jpg';
-  static const String testPrize1 = 'assets/test/prize_1.jpg';
-  static const String testPrize2 = 'assets/test/prize_2.jpg';
-  static const String testPrize3 = 'assets/test/prize_3.jpg';
-  static const String testPrize4 = 'assets/test/prize_4.jpg';
-  static const String testTest1 = 'assets/test/test_1.png';
-  static const String testTest2 = 'assets/test/test_2.jpg';
 }

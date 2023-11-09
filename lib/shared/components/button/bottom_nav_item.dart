@@ -32,7 +32,7 @@ Widget buildBottomNavItem({
               child: Icon(
                 iconData,
                 color: activeIconColor,
-                size: SizeConfig.screenWidth > 500 ? 50 : 30,
+                size: 30,
               ),
             ),
           ),
@@ -42,7 +42,7 @@ Widget buildBottomNavItem({
           child: Text(
             name,
             style: TextStyle(
-              fontSize: SizeConfig.screenWidth > 500 ? 20 : 13,
+              fontSize: 12,
               fontWeight: FontWeight.bold,
               color: selectedNameColor,
             ),

@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:get/get.dart';
 import 'package:qac/shared/components/gap/gap.dart';
-import 'package:qac/shared/helper/helper.dart';
 import 'package:qac/views/contact_us/controller/contact_us_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../../shared/components/button/default_elevated_button.dart';
 import '../../../shared/components/constants/style/color.dart';
@@ -26,6 +26,7 @@ class ContactUs extends GetWidget<ContactUsController> {
           physics: const BouncingScrollPhysics(),
           children: [
             TextFormField(
+              textInputAction: TextInputAction.next,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Full name is required'.tr;
@@ -60,6 +61,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               height: 16,
             ),
             TextFormField(
+              textInputAction: TextInputAction.next,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'School or university name is required'.tr;
@@ -96,6 +98,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               height: 16,
             ),
             TextFormField(
+              textInputAction: TextInputAction.next,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Phone number is required'.tr;
@@ -134,6 +137,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               height: 16,
             ),
             TextFormField(
+              textInputAction: TextInputAction.next,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Email address is required'.tr;
@@ -176,6 +180,7 @@ class ContactUs extends GetWidget<ContactUsController> {
               height: 16,
             ),
             TextFormField(
+              textInputAction: TextInputAction.done,
               validator: (value) {
                 if (value == null || value.isEmpty) {
                   return 'Your question is required'.tr;
@@ -264,8 +269,33 @@ class ContactUs extends GetWidget<ContactUsController> {
               children: [
                 IconButton(
                     onPressed: () async {
-                      HelperUtils.launchExternalUrl(
-                          "https://www.facebook.com/qac.jo");
+                      // WebView(
+                      //   initialUrl: "https://www.facebook.com/qac.jo",
+                      //   javascriptMode: JavascriptMode.unrestricted,
+                      // );
+                      String url = "https://www.facebook.com/qac.jo";
+                      if (await canLaunchUrl(Uri.parse(url))) {
+                        await launchUrl(Uri.parse(url),
+                            mode: LaunchMode.externalApplication);
+                      } else {
+                        // If Facebook app is not installed, show a message
+                        Get.snackbar(
+                          'App Not Installed'.tr,
+                          "The Facebook app is not installed on your device."
+                              .tr,
+                          icon: const Icon(FontAwesomeIcons.facebook,
+                              color: AppColor.blueBanner),
+                          snackPosition: SnackPosition.TOP,
+                          backgroundColor: Colors.white,
+                          borderRadius: 15,
+                          margin: const EdgeInsets.all(15),
+                          colorText: AppColor.globalColor,
+                          duration: const Duration(seconds: 4),
+                          isDismissible: true,
+                          dismissDirection: DismissDirection.horizontal,
+                          forwardAnimationCurve: Curves.easeOutBack,
+                        );
+                      }
                     },
                     icon: const Icon(
                       FontAwesomeIcons.facebook,
@@ -273,8 +303,27 @@ class ContactUs extends GetWidget<ContactUsController> {
                     )),
                 IconButton(
                   onPressed: () async {
-                    HelperUtils.launchExternalUrl(
-                        'https://www.youtube.com/user/qacjo');
+                    String url = 'https://www.youtube.com/user/qacjo';
+                    if (await canLaunchUrl(Uri.parse(url))) {
+                      await launchUrl(Uri.parse(url),
+                          mode: LaunchMode.externalApplication);
+                    } else {
+                      Get.snackbar(
+                        'App Not Installed'.tr,
+                        "The Youtube app is not installed on your device.".tr,
+                        icon: const Icon(FontAwesomeIcons.youtube,
+                            color: AppColor.kindaRed),
+                        snackPosition: SnackPosition.TOP,
+                        backgroundColor: Colors.white,
+                        borderRadius: 15,
+                        margin: const EdgeInsets.all(15),
+                        colorText: AppColor.globalColor,
+                        duration: const Duration(seconds: 4),
+                        isDismissible: true,
+                        dismissDirection: DismissDirection.horizontal,
+                        forwardAnimationCurve: Curves.easeOutBack,
+                      );
+                    }
                   },
                   icon: const Icon(
                     FontAwesomeIcons.youtube,

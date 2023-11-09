@@ -2,6 +2,7 @@ import 'dart:io';
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:qac/shared/widgets/loading_widget/loading_widget.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../../shared/components/constants/style/color.dart';
@@ -38,7 +39,7 @@ class _CommitteesWebViewState extends State<CommitteesWebView> {
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/node/259',
+              initialUrl: 'https://qac.jo/ar/node/259',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {
@@ -51,13 +52,7 @@ class _CommitteesWebViewState extends State<CommitteesWebView> {
                 });
               },
             ),
-            Container(
-              child: const Center(
-                child: CircularProgressIndicator(
-                  color: AppColor.darkRedBanner,
-                ),
-              ),
-            ),
+            const LoadingWidget()
           ]),
         ));
   }

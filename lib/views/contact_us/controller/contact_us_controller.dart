@@ -1,10 +1,9 @@
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:qac/api/repo/http_repo.dart';
 import 'package:qac/shared/components/constants/style/color.dart';
 import 'package:qac/shared/helper/cache_utils.dart';
-import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-import '../../main_page/view/main_page.dart';
 import '../view/message_delivered.dart';
 
 class ContactUsController extends GetxController {
@@ -29,15 +28,16 @@ class ContactUsController extends GetxController {
     try {
       await httpRepository.contactUs(
         name: fullNameController.text,
-       email: emailController.text ,
+        email: emailController.text,
         phoneNumber: phoneController.text,
         question: questionController.text,
         schoolName: schoolNameController.text,
       );
-Future.delayed(const Duration(milliseconds: 500),
+      Future.delayed(
+        const Duration(milliseconds: 500),
+      );
+      Get.to(() => const MessageDelivered());
 
-);
-      Get.to(()=>const MessageDelivered());
       if (contactUsResponse.value == null) {
         return null;
       }
@@ -61,8 +61,8 @@ Future.delayed(const Duration(milliseconds: 500),
       );
       e.printError();
     }
-
   }
+
   @override
   void dispose() {
     emailController.dispose();

@@ -1,6 +1,6 @@
-import 'package:flutter/material.dart';
 import 'package:qac/shared/components/card_view_container/clickable_card_view.dart';
 import 'package:qac/shared/components/constants/constant_data/constant_data.dart';
+import 'package:flutter/material.dart';
 
 import '../../../main.dart';
 
@@ -10,14 +10,12 @@ class MoreItems extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 8.0,
-      ),
+      padding: const EdgeInsets.symmetric(horizontal: 8.0),
       child: ScrollConfiguration(
         behavior: MyBehavior(),
         child: ListView.builder(
           padding: const EdgeInsets.symmetric(
-            vertical: 40,
+            vertical: 20,
           ),
           itemBuilder: (BuildContext context, int index) {
             return ClickableCard(

@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:webview_flutter/webview_flutter.dart';
 
 import '../../../../shared/components/constants/style/color.dart';
+import '../../../../shared/widgets/loading_widget/loading_widget.dart';
 
 class VisionWebView extends StatefulWidget {
   VisionWebView({Key? key}) : super(key: key);
@@ -38,7 +39,7 @@ class _VisionWebViewState extends State<VisionWebView> {
         body: SafeArea(
           child: IndexedStack(index: position, children: <Widget>[
             WebView(
-              initialUrl: 'https://www.qac.jo/ar/node/141',
+              initialUrl: 'https://qac.jo/ar/node/141',
               javascriptMode: JavascriptMode.unrestricted,
               onPageStarted: (value) {
                 setState(() {
@@ -51,11 +52,7 @@ class _VisionWebViewState extends State<VisionWebView> {
                 });
               },
             ),
-            const Center(
-              child: CircularProgressIndicator(
-                color: AppColor.darkRedBanner,
-              ),
-            ),
+            const LoadingWidget()
           ]),
         ));
   }
